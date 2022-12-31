@@ -23,13 +23,43 @@ public class two_num_1959 {
 
         for(int tc = 1; tc <= T; tc++)
         {
+            int a = sc.nextInt();
+            int[] arr_s = new int[a];
+            int b = sc.nextInt();
+            int[] arr_l = new int[b];
+            long max_result = 0L;
+            for(int i=0; i<a; i++){
+                arr_s[i]= sc.nextInt();
+            }
+            for(int i=0; i<b; i++){
+                arr_l[i]= sc.nextInt();
+            }
+            if(a>b){
+                for(int i=0;i<a-b+1;i++){
+                    long total = 0;
+                    for(int j=0;j<b;j++){
+                        total += arr_s[i+j]*arr_l[j];
+                    }
+                    max_result = Math.max(max_result,total);
+                }
+            }else if (a<b){
+                for(int i=0;i<b-a+1;i++){
+                    long total = 0;
+                    for(int j=0;j<a;j++){
+                        total += arr_l[i+j]*arr_s[j];
+                    }
+                    max_result = Math.max(max_result,total);
+                }
+            }else{
+                long total = 0;
+                for(int i = 0; i<a;i++){
+                    total += arr_s[i]*arr_l[i];
+                }
+                max_result= Math.max(max_result,total);
 
-            /////////////////////////////////////////////////////////////////////////////////////////////
-			/*
-				 이 부분에 여러분의 알고리즘 구현이 들어갑니다.
-			 */
-            /////////////////////////////////////////////////////////////////////////////////////////////
+            }
 
+            System.out.printf("#%d %d\n",tc,max_result);
         }
     }
 }
