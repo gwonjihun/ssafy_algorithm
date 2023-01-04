@@ -1,3 +1,4 @@
+package algorithm;
 
 import java.util.Scanner;
 import java.io.FileInputStream;

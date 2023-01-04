@@ -1,3 +1,5 @@
+package algorithm;
+
 import java.util.Scanner;
 public class two_num_1959 {
     public static void main(String args[]) throws Exception

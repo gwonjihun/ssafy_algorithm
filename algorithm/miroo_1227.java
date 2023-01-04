@@ -1,9 +1,11 @@
+package algorithm;
+
 import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Scanner;
 import java.io.BufferedReader;
 import java.util.Queue;
-public class miroo_1226 {
+public class miroo_1227 {
     static int[][] arr;
     static int[][] visitied;
     static String n;
@@ -29,12 +31,12 @@ public class miroo_1226 {
         {
 
             n = bf.readLine();
-            arr = new int [16][16];
-            visitied = new int [16][16];
+            arr = new int [100][100];
+            visitied = new int [100][100];
 //          초기 그래프 입력
-            for(int i = 0 ; i< 16; i++) {
+            for(int i = 0 ; i< 100; i++) {
                 String str = bf.readLine();
-                for (int j = 0; j < 16; j++) {
+                for (int j = 0; j < 100; j++) {
                     arr[i][j] = str.charAt(j) - '0';
                 }
             }
@@ -61,7 +63,7 @@ public class miroo_1226 {
                 int nx = x+dx[j];
                 int ny = y + dy[j];
 
-                if(nx<0 || ny <0 || nx>15 || ny >15) continue;
+                if(nx<0 || ny <0 || nx>99 || ny >99) continue;
                 if(arr[nx][ny]==1)continue;
                 if (visitied[nx][ny]==1)continue;
                 visitied[nx][ny]=1;
