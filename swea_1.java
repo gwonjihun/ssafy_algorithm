@@ -1,5 +1,3 @@
-package algorithm;
-
 import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.io.FileInputStream;
