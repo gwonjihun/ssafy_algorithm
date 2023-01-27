@@ -1,4 +1,4 @@
-package algorithm;
+package ssafy_algorithm.baekjjon;
 
 import java.util.Scanner;
 class hello {
