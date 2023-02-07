@@ -21,7 +21,7 @@ public class main_boj_11729 {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		hanoi(n,1,2,3);
-		System.out.println(cnt);
+		sr.insert(0, cnt+"\n");
 		System.out.println(sr);
 	}
 }
