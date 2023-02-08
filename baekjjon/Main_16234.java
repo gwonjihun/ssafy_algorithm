@@ -20,7 +20,7 @@ public class Main_16234 {
 	static Deque<node> q;
 	static List<node> li;
 	// li에 인구 이동 좌표를 저장한다..?엥..?
-	static boolean flag = false;
+	static boolean flag = true;
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine()," ");
@@ -37,7 +37,8 @@ public class Main_16234 {
 			}
 		}
 		int day = 0;
-		while(!flag) {
+		//문제 : 어떻게 멈출것인가인데..
+		while(flag) {
 			// 2중 for문 + dfs로 뭉쳐져 있는 곳에 대해서 찾아준다.
 
 			visited = new boolean[N][N];
@@ -48,20 +49,32 @@ public class Main_16234 {
 					li = new ArrayList<>();
 					//dfs로 인구 이동이 가능한 위치에 대해서 li에 저장하고
 					//저장되는 곳마다의 인구수를 sum하여 return한다.
+//					System.out.println("dfs call");
 					int sum = dfs(i,j);
-					//여기서는 li에 저장되어있는 위치에 sum/list.size값을 기준으로 값을 저장해준다
-					change(sum);
+					if(sum != map[i][j]) 
+					{
+						flag= false;
+						change(sum);
+					}//멈추는 방법은 day에 변함이 없다는걸 확인하는 방법은 -> sum 0이여서 flag를 true로 변환해준다
+					 //flag가 true이면 그냥 넘어간다
+					 //
+					 //여기서는 li에 저장되어있는 위치에 sum/list.size값을 기준으로 값을 저장해준다
+
 					//이게 진행되면
 				}
 			}
-			if(!flag) {
+			if(flag) {
+				break;
+			}else {
+				flag = true;
 				day++;
 			}
 		}
-		
+		System.out.println(day);
 		
 	}
 	static void change(int sum) {
+		if(li.size()==0) return;
 		int avg = sum/li.size();
 		for(node p : li) {
 			map[p.x][p.y]= avg; 
@@ -72,6 +85,7 @@ public class Main_16234 {
 		cnt += map[ix][iy];
 		q = new ArrayDeque<>();
 		q.add(new node(ix,iy));
+		li.add(new node(ix,iy));
 		visited[ix][iy]= true;
 		while(!(q.isEmpty())) {
 			node t = q.pollFirst();
@@ -80,12 +94,14 @@ public class Main_16234 {
 			for(int i=0;i<4;i++) {
 				int nx = x+dx[i];
 				int ny = y+dy[i];
-				if(0>nx && 0>ny && N<=nx && N <=ny) continue;
-				if (L<=Math.abs(map[x][y]-map[nx][ny])&& Math.abs(map[x][y]-map[nx][ny])<=R&& visited[nx][ny]
-						) {
+				if(0>nx || 0>ny || N<=nx || N <=ny) continue;
+				if (L<=Math.abs(map[x][y]-map[nx][ny])&& Math.abs(map[x][y]-map[nx][ny])<=R&& !(visited[nx][ny]))
+				{
+					li.add(new node(nx,ny));
+//					System.out.println("nx"+nx+"ny"+ny);
 					q.add(new node(nx,ny));
 					visited[nx][ny]=true;
-					cnt +=
+					cnt += map[nx][ny];
 				}
 			}
 		}

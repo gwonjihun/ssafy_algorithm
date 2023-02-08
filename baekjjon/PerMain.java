@@ -10,8 +10,8 @@ public class PerMain {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;
 		c= 0;
-		//perm(0);//nPr= 4P3 순열(Permutation) : 순서중요(123!=321)
-		comb(0,0); // nCr = 4C3 조합(Combination): 순서 상관 없음(123 == 321)
+		perm(0);//nPr= 4P3 순열(Permutation) : 순서중요(123!=321)
+//		comb(0,0); // nCr = 4C3 조합(Combination): 순서 상관 없음(123 == 321)
 		System.out.println(c);
 	}
 	static void comb(int cnt, int start) {
@@ -26,6 +26,7 @@ public class PerMain {
 		}
 	}
 	static void perm(int cnt) {
+//		System.out.println(cnt);
 		if(cnt == R) {
 			System.out.println(Arrays.toString(b)); c++;
 			return;
@@ -34,9 +35,10 @@ public class PerMain {
 			if(v[i]) continue;
 			v[i]=true;
 			int T= b[cnt];
-			b[cnt]= a[i];
-			perm(cnt+1);
-			b[cnt] =T;
+			b[cnt]= a[i];  
+			perm(++cnt); 
+			--cnt;
+			b[cnt] =T; 
 			v[i]=false;
 		}
 	}

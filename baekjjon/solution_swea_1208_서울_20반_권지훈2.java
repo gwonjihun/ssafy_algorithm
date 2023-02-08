@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 public class solution_swea_1208_서울_20반_권지훈2 {
 	
 	static StringBuilder sb = new StringBuilder();
-
+	
 	public static void main(String[] args) throws Exception {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
