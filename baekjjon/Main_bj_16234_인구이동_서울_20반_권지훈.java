@@ -3,7 +3,7 @@ package gwonjihun.baekjjon;
 import java.io.*;
 import java.util.*;
 
-public class Main_16234 {
+public class Main_bj_16234_인구이동_서울_20반_권지훈 {
 	/*
 	 * 1. 완탐으로 모든 배열의 위치를 탐색해준다.
 	 * 2. 선택된 배열의 위치에서 부터 bfs로 상하좌우를 돈다
@@ -98,7 +98,6 @@ public class Main_16234 {
 				if (L<=Math.abs(map[x][y]-map[nx][ny])&& Math.abs(map[x][y]-map[nx][ny])<=R&& !(visited[nx][ny]))
 				{
 					li.add(new node(nx,ny));
-//					System.out.println("nx"+nx+"ny"+ny);
 					q.add(new node(nx,ny));
 					visited[nx][ny]=true;
 					cnt += map[nx][ny];
