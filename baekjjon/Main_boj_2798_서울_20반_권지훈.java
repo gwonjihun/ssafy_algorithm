@@ -14,12 +14,17 @@ public static void main(String[] args) throws Exception{
 	
 	int array[] = new int [input];
 	 st = new StringTokenizer(br.readLine(), " ");
-	for(int i = 0 ; i<input ; i++) {
+	
+	 // N*2 => O(N^2)
+	 for(int i = 0 ; i<input ; i++) {
 		int n =  Integer.parseInt(st.nextToken());
 		if(n<max) {
 			array[i] = n;
 		}
-	}
+	} 
+	
+	 // input*(input-1)*(input-2) = O(n^3) arr.length의 최대 길이는 100  O(100^3)
+	 // 따라서 3중 for문을 이용해도 주어진 시간 내에 동작 가능.
 	for(int i = 0 ; i<array.length-2; i++) {
 		for(int j = i+1;j<array.length-1;j++) {
 			for(int k = j+1;k<array.length;k++) {

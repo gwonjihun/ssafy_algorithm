@@ -19,12 +19,7 @@ public class main_boj_11660 {
 			st = new StringTokenizer(br.readLine()," ");
 			for(int j=1;j<=n;j++) {
 				arr[i][j] = Integer.parseInt(st.nextToken());
-			}
-		}
-		for(int i=0;i<n;i++) {
-			for(int j=0;j<n;j++) {
-
-				dp[i+1][j+1] = dp[i+1][j] + dp[i][j+1] - dp[i][j] + arr[i+1][j+1];
+				dp[i][j] = dp[i][j-1] + dp[i-1][j] - dp[i-1][j-1] + arr[i][j];
 			}
 		}
 		for(int i = 0; i<k;i++) {
