@@ -23,7 +23,7 @@ public class Combmain {
 //			if(v[i]) continue;
 //			v[i]=true;
 			b[cnt] = a[i];
-			percomb(cnt+1,i+1);// 조합
+			percomb(cnt+1,i);// 조합
 //			percomb(cnt+1,0);// 순열
 //			percomb(cnt+1,i);// 중복허용조합
 //			v[i]=false;
