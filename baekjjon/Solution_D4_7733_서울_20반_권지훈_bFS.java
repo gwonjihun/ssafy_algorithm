@@ -32,6 +32,7 @@ public class Solution_D4_7733_서울_20반_권지훈_bFS {
 				for(int x=0;x<N;x++) {
 					for(int y=0;y<N;y++) {
 						if( visited[x][y] || arr[x][y]<=i )continue;
+						
 						cnt+=1;
 						bfs(x,y,i);
 					}
