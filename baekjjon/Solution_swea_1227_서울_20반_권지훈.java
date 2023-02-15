@@ -18,8 +18,7 @@ public class Solution_swea_1227_서울_20반_권지훈 {
 				for(int j = 0; j<100;j++) {
 					arr[i][j] = (int)st.charAt(j)-'0';
 					if(arr[i][j]==2) {
-						x= i;
-						y= j;
+						x= i;y= j;
 					}
 				}
 			}
@@ -42,7 +41,6 @@ public class Solution_swea_1227_서울_20반_권지훈 {
 				int nx = xy[0]+dx[i];
 				int ny = xy[1]+dy[i];
 				if(0<=nx && nx<100 && 0<=ny && ny<100 && !v[nx][ny] && arr[nx][ny]!=1) {
-
 					if(arr[nx][ny]==3) { answer = 1; return;}
 					a.offerLast(new int[] {nx,ny});
 				}

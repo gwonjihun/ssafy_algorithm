@@ -36,9 +36,10 @@ public class Main_boj_2573_서울_20반_권지훈 {
 		int year = 0;
 
 		while (cnt == 1) {
+			visited = new boolean[N][M];
 			for (int i = 0; i < N; i++) {
 				for (int j = 0; j < M; M++) {
-					bfs
+					bfs(0,0);
 				}
 			}
 		}
@@ -47,6 +48,17 @@ public class Main_boj_2573_서울_20반_권지훈 {
 			System.out.println(0);
 		} else {
 			System.out.println(year);
+		}
+	}
+
+	 static void bfs(int i, int j) {
+		// TODO Auto-generated method stub
+		Deque<int[]> q = new ArrayDeque<>();
+		q.addLast(new int[] {i,j});
+		while(!q.isEmpty()) {
+			int[] xy = q.poll();
+			visited[xy[0]][xy[1]] = true;
+			
 		}
 	}
 }
