@@ -51,6 +51,7 @@ public class Main_boj_2667_서울_20반_권지훈 {
 		
 		a.set(cnt, Math.max(a.get(cnt),r_cnt));
 		
+		
 	}
 }
 
