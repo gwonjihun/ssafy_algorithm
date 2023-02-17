@@ -1,9 +1,9 @@
-package gwonjihun.baekjjon;
+package gwonjihun.swea;
 
 import java.util.*;
 import java.io.*;
 
-public class Solution_D4_7733_서울_20반_권지훈_bFS {
+public class Solution_D4_7733_서울_20반_권지훈_DFS {
 	static int[][] arr;
 	static boolean[][] visited;
 	static int N;
@@ -31,10 +31,10 @@ public class Solution_D4_7733_서울_20반_권지훈_bFS {
 				cnt =0;
 				for(int x=0;x<N;x++) {
 					for(int y=0;y<N;y++) {
+//						System.out.println(x+" "+ y);
 						if( visited[x][y] || arr[x][y]<=i )continue;
-						
-						cnt+=1;
-						bfs(x,y,i);
+						cnt++;
+						dfs(x,y,i);
 					}
 				}
 				answer = Math.max(answer,cnt);
@@ -44,23 +44,16 @@ public class Solution_D4_7733_서울_20반_권지훈_bFS {
 		System.out.println(sb);
 	}
 
-	static void bfs(int x, int y, int day) {
-
-			Deque<int[]> q = new ArrayDeque<>();
-			q.add(new int[] {x,y});
+	static void dfs(int x, int y, int day) {
+//			System.out.println(cnt);
 			visited[x][y]=true;
-			while(!q.isEmpty()) {
-				int[] tmp = q.poll();
-//				System.out.println(q.size());
-				for(int i = 0; i<4;i++) {
-					int nx = tmp[0]+dx[i], ny = tmp[1]+dy[i];
-//					System.out.println("X: " + nx + "Y: "+ ny);
-					if(0>nx || nx>=N ||0>ny || ny>=N ) {continue;}
-					if(visited[nx][ny] || arr[nx][ny]<=day ) {continue;}
-					visited[nx][ny] = true;
-					q.add(new int[] {nx,ny});
-				}
+			for(int i = 0;i<4;i++) {
+				int nx = x+dx[i], ny = y+dy[i];
+				if(0>nx || nx>=N ||0>ny || ny>=N ) {continue;}
+				if(visited[nx][ny] || arr[nx][ny]<=day ) {continue;}
+				dfs(nx,ny,day);
 			}
+			
 			
 	}
 

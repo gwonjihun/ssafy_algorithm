@@ -1,4 +1,4 @@
-package gwonjihun.baekjjon;
+package gwonjihun.swea;
 
 import java.util.*;
 import java.io.*;

@@ -1,4 +1,4 @@
-package gwonjihun.baekjjon;
+package gwonjihun.swea;
 
 import java.io.BufferedReader;
 import java.io.IOException;

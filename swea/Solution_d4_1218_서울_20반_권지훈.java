@@ -26,7 +26,7 @@ public class Solution_d4_1218_서울_20반_권지훈 {
 	}
 }
 =======
-package baekjjon;
+package gwonjihun.swea;
 import java.util.*;
 import java.io.*;
 public class Solution_d4_1218_서울_20반_권지훈 {
