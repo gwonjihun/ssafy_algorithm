@@ -1,31 +1,3 @@
-<<<<<<< HEAD
-package gwonjihun.baekjjon;
-
-import java.util.*;
-import java.io.*;
-
-public class Solution_d4_1218_서울_20반_권지훈 {
-	static char[] open = {'{','[','(','<'};
-	static char[] close = {'}',']',')','>'};
-	public static void main(String[] args) throws Exception {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
-		for(int T=1;T<=10;T++) {
-			
-			Deque<Character> ops = new ArrayDeque<>();
-			Deque<Character> cls = new ArrayDeque<>();
-			
-			char[] stc = br.readLine().toCharArray();
-			
-			for(int i = 0 ; i<stc.length;i++) {
-				
-			}
-			
-			
-		}
-	}
-}
-=======
 package gwonjihun.swea;
 import java.util.*;
 import java.io.*;
@@ -68,4 +40,3 @@ public class Solution_d4_1218_서울_20반_권지훈 {
         System.out.println(sb);
         }
     }
->>>>>>> b741a5b9002a1c140219616a67d4e2600389a9f0
