@@ -38,7 +38,7 @@ public class Main_bj_16234_인구이동_서울_20반_권지훈 {
 		}
 		int day = 0;
 		//문제 : 어떻게 멈출것인가인데..
-		while(flag) {
+		while(true) {
 			// 2중 for문 + dfs로 뭉쳐져 있는 곳에 대해서 찾아준다.
 
 			visited = new boolean[N][N];
