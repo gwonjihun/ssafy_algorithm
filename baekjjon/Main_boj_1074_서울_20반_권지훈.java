@@ -22,12 +22,12 @@ public class Main_boj_1074_서울_20반_권지훈 {
 		if(x==X && y==Y) {
 			return;
 		}
-		if {
-
-			find(n/2,x,y);
-			find(n/2,x,y+n/2);
-			find(n/2,x+n/2,y);
-			find(n/2,x+n/2,y+n/2);
-		}
+//		if {
+//
+//			find(n/2,x,y);
+//			find(n/2,x,y+n/2);
+//			find(n/2,x+n/2,y);
+//			find(n/2,x+n/2,y+n/2);
+//		}
 	}
 }
