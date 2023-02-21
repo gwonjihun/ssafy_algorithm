@@ -38,9 +38,10 @@ public class Main_boj_16234_서울_20반_권지훈_복습 {
 					if(v[i][j]) continue; // 이미 방문되어 있으면  -> 여기서 문제 없고
 					li = new ArrayList<>();
 					int sum = bfs(i,j);// 예를들어 둘의 차이라 20인데 하나가 20이고 하나가 0이면? -> 10이되버리면?
-					// 
-					if(sum != arr[i][j]) { // -> // 틀려야한다.
-//					if(li.size()>1) { // ->정답
+					//
+//					if(sum/li.size() != arr[i][j]) { //
+//					if(sum != arr[i][j]) { // -> // 
+					if(li.size()>1) { // ->정답
 						//이거로 나누면 안되는 이유는 -> 1. 0 
 						flag= true;
 						change(sum);
