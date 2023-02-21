@@ -8,7 +8,6 @@ public class Main_boj_3109_서울_20반_권지훈 {
 	static char[][] arr;
 	static int R, C;
 	static int[] dx = {-1,0,1}, dy = {1,1,1};
-	static boolean[][] v;
 	static int cnt;
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -32,7 +31,13 @@ public class Main_boj_3109_서울_20반_권지훈 {
 	
 	static boolean dfs(int x,int y) {
 		arr[x][y]= '-';
+		for(char[] a: arr) {
+			for(char b : a) {
+				System.out.print(b);
+			}System.out.println();
+		}
 		
+		System.out.println(")____________________(");
 		if(y==C-1) {
 			return true;
 		}
