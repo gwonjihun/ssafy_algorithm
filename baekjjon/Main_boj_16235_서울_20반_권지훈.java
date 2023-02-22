@@ -24,7 +24,7 @@ class tree {
 	}
 }
 
-public class Main_boj_16235_서울_20반_권지훈_ing {
+public class Main_boj_16235_서울_20반_권지훈 {
 
 	public static void main(String[] args) throws Exception{
 		

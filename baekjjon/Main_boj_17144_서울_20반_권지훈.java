@@ -1,4 +1,4 @@
-package baekjjon;
+package gwonjihun.baekjjon;
 
 import java.util.*;
 import java.io.*;
