@@ -8,7 +8,7 @@ public class Main_boj_17135_서울_20반_권지훈 {
 	static int N,M, cnt;
 	static int D;
 	public static void main(String[] args) {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(str)
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		StringTokenizer st = new StringTokenizer(str);
 	}
 }
