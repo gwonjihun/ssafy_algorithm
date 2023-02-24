@@ -47,6 +47,7 @@ public class Solution_D5_1247_서울_20반_권지훈 {
 			sum += (Math.abs(cus[per[0]][0]-com[0])+Math.abs(cus[per[0]][1]-com[1]));
 			for(int i = 1 ; i<N; i++) {
 				sum += (Math.abs(cus[per[i]][0]-cus[per[i-1]][0])+Math.abs(cus[per[i]][1]-cus[per[i-1]][1]));
+				if(sum>result) return;
 			}
 			sum += (Math.abs(cus[per[N-1]][0]-home[0])+Math.abs(cus[per[N-1]][1]-home[1]));
 			result = Math.min(result, sum);
