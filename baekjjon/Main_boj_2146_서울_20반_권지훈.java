@@ -1,4 +1,4 @@
-package gwonjihun.baekjjon;
+package baekjjon;
 
 import java.io.*;
 import java.util.*;
@@ -54,7 +54,8 @@ public class Main_boj_2146_서울_20반_권지훈 {
 				
 				if(flag) {
 //					System.out.println("i : "+i+ "j : " + j);
-					dfs(i,j, new boolean[N][N], 0,map[i][j]);
+					v= new boolean[N][N];
+					bfs(i,j);
 				}
 			}
 		}
@@ -64,32 +65,30 @@ public class Main_boj_2146_서울_20반_권지훈 {
 		System.out.println(min);
 
 	}
-	static void dfs(int x, int y, boolean[][] b, int cnt, int start) {
-		
-		if(min<=cnt) return;
+	static void bfs(int x, int y) {
+		Deque<int[]> q = new ArrayDeque<>();
+		v[x][y] = true;
+		q.add(new int[] { x, y , 0 });
+		int start = map[x][y];
+		while(!q.isEmpty()){
 
-		b[x][y]=true;
-		for(int d = 0; d<4;d++) {
-			
-			int nx = x+dx[d];
-			int ny = y+dy[d];
-			if(0 <= nx && nx < N && 0 <= ny && ny < N && !b[nx][ny]) {
-				
-				if(map[nx][ny] == 0 ) {
-
-					dfs(nx,ny,b,cnt+1,start);
-					
-				}else if(map[nx][ny]!=start) {
-					
-					min = Math.min(min, cnt);
+			int[] xy = q.poll();
+			for (int d = 0; d < 4; d++) {
+				int nx = xy[0] + dx[d];
+				int ny = xy[1] + dy[d];
+				if (0 <= nx && nx < N && 0 <= ny && ny < N && !v[nx][ny] && map[nx][ny]!= start) {
+					// 자기 자신의 섬을 제외하고는 모든 바다와 섬을 방문할 수 있어야한다.
+					v[nx][ny]=true;
+					if(map[nx][ny]==0){
+						q.addLast(new int[]{nx,ny, xy[2]+1});
+					}else{
+						min = Math.min(min,xy[2]);
+					}
 				}
-
-
-				b[nx][ny] = false;	
 			}
 		}
-		b[x][y]=false;
 	}
+
 	static void bfs(int x, int y, int land) {
 		Deque<int[]> q = new ArrayDeque<>();
 		v[x][y] = true;
