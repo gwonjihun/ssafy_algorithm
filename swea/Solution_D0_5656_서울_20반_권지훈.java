@@ -1,4 +1,4 @@
-package swea;
+package gwonjihun.swea;
 
 import java.sql.Array;
 import java.util.*;
