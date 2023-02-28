@@ -65,27 +65,30 @@ public class Main_boj_2146_서울_20반_권지훈 {
 
 	}
 	static void dfs(int x, int y, boolean[][] b, int cnt, int start) {
-		if(min<=cnt) return;
 		
+		if(min<=cnt) return;
+
+		b[x][y]=true;
 		for(int d = 0; d<4;d++) {
 			
 			int nx = x+dx[d];
 			int ny = y+dy[d];
-			b[x][y]=true;
 			if(0 <= nx && nx < N && 0 <= ny && ny < N && !b[nx][ny]) {
 				
 				if(map[nx][ny] == 0 ) {
 
-					b[nx][ny]=true;
 					dfs(nx,ny,b,cnt+1,start);
-
-					b[nx][ny] = false;
+					
 				}else if(map[nx][ny]!=start) {
+					
 					min = Math.min(min, cnt);
 				}
+
+
+				b[nx][ny] = false;	
 			}
 		}
-		
+		b[x][y]=false;
 	}
 	static void bfs(int x, int y, int land) {
 		Deque<int[]> q = new ArrayDeque<>();
