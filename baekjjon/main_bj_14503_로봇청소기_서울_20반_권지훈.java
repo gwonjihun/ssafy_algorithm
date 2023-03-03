@@ -1,4 +1,4 @@
-package ssafy_algorithm.baekjjon;
+package gwonjihun.baekjjon;
 
 import java.io.*;
 import java.util.*;
