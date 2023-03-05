@@ -60,33 +60,9 @@ public class Main_boj_2573_서울_20반_권지훈 {
 		if (part == 0)	return -1;
 		return 1;
 	}
-
-//
-//		while (true) {
-//			visited = new boolean[N][M];
-//			cnt = 0;
-//			for (int i = 1; i < N-1; i++) {
-//				for (int j = 1; j < M-1; j++) {
-//					if (!visited[i][j] && arr[i][j] != 0) {
-//						if (cnt >= 1 ) { System.out.println("!@#!@#"); return;}
-//						bfs(i, j);
-//						cnt++;
-//					}
-//				}
-//			}
-//			if(cnt == 0 ) {
-//				break;
-//			}
-//			year++;
-//		}
-//		System.out.println("!");
-//		System.out.println(year);
-//	}
-//
-//
 	static void bfs(int r, int c) {
 
-		
+
 
 		Deque<int[]> q = new ArrayDeque<>();
 		q.addLast(new int[] { r, c });
@@ -120,5 +96,29 @@ public class Main_boj_2573_서울_20반_권지훈 {
 			}
 		}
 	}
+//
+//		while (true) {
+//			visited = new boolean[N][M];
+//			cnt = 0;
+//			for (int i = 1; i < N-1; i++) {
+//				for (int j = 1; j < M-1; j++) {
+//					if (!visited[i][j] && arr[i][j] != 0) {
+//						if (cnt >= 1 ) { System.out.println("!@#!@#"); return;}
+//						bfs(i, j);
+//						cnt++;
+//					}
+//				}
+//			}
+//			if(cnt == 0 ) {
+//				break;
+//			}
+//			year++;
+//		}
+//		System.out.println("!");
+//		System.out.println(year);
+//	}
+//
+//
+
 
 }
