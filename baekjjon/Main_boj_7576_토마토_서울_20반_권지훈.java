@@ -8,6 +8,7 @@ public class Main_boj_7576_토마토_서울_20반_권지훈 {
 	static int N, M;
 	static int[] dx = {0,0,1,-1}, dy = {1,-1,0,0};
 	static Deque<int[]> q;
+	static int answer = 0;
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine()," ");
@@ -22,7 +23,20 @@ public class Main_boj_7576_토마토_서울_20반_권지훈 {
 				if(map[i][j]==1) q.addLast(new int[] {i,j,0});
 			}
 		}
-		int answer = 0;
+		
+
+		bfs();
+		for(int i = 0; i< N;i++) {
+			for(int j = 0 ; j < M ; j++) {
+				if(map[i][j]==0) answer = -1;
+			}
+		}
+//		for(int[] a: map) {
+//			System.out.println(Arrays.toString(a));
+//		}
+		System.out.println(answer);
+	}
+	static void bfs() {
 		while(!q.isEmpty()) {
 			int[] xy = q.poll();
 			for(int d=0; d<4;d++) {
@@ -35,15 +49,5 @@ public class Main_boj_7576_토마토_서울_20반_권지훈 {
 				}
 			}
 		}
-	
-		for(int i = 0; i< N;i++) {
-			for(int j = 0 ; j < M ; j++) {
-				if(map[i][j]==0) answer = -1;
-			}
-		}
-		for(int[] a: map) {
-			System.out.println(Arrays.toString(a));
-		}
-		System.out.println(answer);
 	}
 }
