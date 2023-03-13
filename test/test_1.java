@@ -1,4 +1,4 @@
-package test;
+package gwonjihun.test;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -47,7 +47,7 @@ public class test_1 {
                             min_Cnt+= 3;
                             for(int a = 1; a<=3;a++) dir = (dir+3)%4;
                         }else{
-                            min_Cnt+= 4;
+                            min_Cnt+= 3;
                             for(int a = 1; a<=4;a++) dir = (dir+3)%4;
                         }
                     }else if (people[0]<apple[0]){
@@ -76,7 +76,7 @@ public class test_1 {
                             min_Cnt+= 3;
                             for(int a = 1; a<=3;a++) dir = (dir+3)%4;
                         }else{
-                            min_Cnt+= 4;
+                            min_Cnt+= 3;
                             for(int a = 1; a<=4;a++) dir = (dir+3)%4;
                         }
                     }else{}
@@ -84,7 +84,7 @@ public class test_1 {
                 else if(people[2] == 2){
                     if(people[0] > apple[0]){
                         if(people[1] > apple[1]){
-                            min_Cnt+= 4;
+                            min_Cnt+= 3;
                             for(int a = 1; a<=4;a++) dir = (dir+3)%4;
                         }else{
                             min_Cnt+= 1;
@@ -115,7 +115,7 @@ public class test_1 {
                             for(int a = 1; a<=1;a++) dir = (dir+3)%4;
                         }else{
                             System.out.println("!@#!@#");
-                            min_Cnt+= 4;
+                            min_Cnt+= 3;
                             for(int a = 1; a<=4;a++) dir = (dir+3)%4;
                         }
                     }else{}
