@@ -24,7 +24,7 @@ public class Main_boj_21608_서울 {
 		}
 		for(int i = 0;i < N*N;i++) {
 			//여기서 이제 student배열에 대해서 진행하는
-			if()
+//			if()
 		}
 		
 	}

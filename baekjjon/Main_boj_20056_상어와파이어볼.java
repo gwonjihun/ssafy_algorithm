@@ -21,7 +21,7 @@ public class Main_boj_20056_상어와파이어볼 {
 	}
 
 	static List<fireball>[][] map;
-	static List<firball>
+//	static List<firball>
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");

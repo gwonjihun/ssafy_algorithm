@@ -15,7 +15,7 @@ public class Main_boj_9465 {
 		dp = new int[N+1];
 		map = new int[N+1][2];
 		dp[0] = 0;
-		dp[1] = Math.max()
+//		dp[1] = Math.max();
 		
 		}
 	}

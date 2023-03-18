@@ -1,4 +1,4 @@
-package gwonjihun.codetree;
+package codetree;
 
 import java.io.*;
 import java.util.*;
@@ -8,7 +8,7 @@ public class Main_싸움땅 {
 	static class person{
 		int x,y,ablity,dir,gun;
 		
-		public person(int x, int y, int ablity, int dir, int gun) {
+		public person(int x, int y, int dir, int ablity, int gun) {
 			super();
 			this.x = x;
 			this.y = y;
@@ -33,10 +33,7 @@ public class Main_싸움땅 {
 	static int[] dx= {-1,0,1,0}, dy = {0,1,0,-1};
 	static int[] point;
 	static int n, m, k;// n : 맵 크키 ,  m은 플레이어수 k는 턴 수
-	
-	static boolean inRange(int x, int y) {
-		return 0<=x && x<n && 0<=y&& y<n;
-	}
+
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine()," ");
@@ -44,6 +41,7 @@ public class Main_싸움땅 {
 		m = Integer.parseInt(st.nextToken());
 		k = Integer.parseInt(st.nextToken());
 		p_l = new person[m];
+		point = new int[m];
 		map = new ArrayList[n][n];
 		for(int i = 0; i<n; i++) {
 			for(int j= 0 ; j< n ; j++) {
@@ -76,9 +74,108 @@ public class Main_싸움땅 {
 		
 		answer();
 	}
-	static void simulation() {
-		
+	static boolean inRange(int x, int y) {
+		return 0<=x && x<n && 0<=y&& y<n;
 	}
+	static void simulation() {
+		for(int i=0; i< p_l.length;i++){
+			person cur_p = p_l[i];
+			int[]  pos = move(cur_p);
+			int fig_idx=check(pos);
+			if(fig_idx==-1){
+				int weapon = Math.max(weapon_take(pos[0],pos[1]), cur_p.ablity);
+				p_l[i] = new person(pos[0],pos[1],pos[2], cur_p.ablity,  weapon);
+			}else{
+				//여기서사람들이 싸워야한단 말이지
+				p_l[i] = new person(pos[0],pos[1], pos[2], cur_p.ablity, cur_p.gun);
+				fight(i, fig_idx);
+			}
+		}
+	}
+	static void fight(int idx1, int idx2){
+		int pl_1_A = p_l[idx1].ablity+ p_l[idx1].gun;
+		int pl_2_A = p_l[idx2].ablity+ p_l[idx2].gun;
+		if(pl_1_A>pl_2_A){
+			System.out.println("111");
+			lose(idx2);
+			win(idx1);
+			point[idx1] += (pl_1_A-pl_2_A);
+		}else if(pl_1_A<pl_2_A){
+			System.out.println("2");
+			lose(idx1);
+			win(idx2);
+			point[idx2] += (pl_2_A-pl_1_A);
+		}else{
+			if(p_l[idx1].ablity> p_l[idx2].ablity){
+				System.out.println("3");
+				lose(idx2);
+				win(idx1);
+			}else{
+				System.out.println("44");
+				lose(idx1);
+				win(idx2);
+			}
+		}
+	}
+	static void lose(int idx){
+		int cx = p_l[idx].x;
+		int cy = p_l[idx].y;
+		int cd = p_l[idx].dir;
+		if(p_l[idx].gun==0){
+		map[cx][cy].add(p_l[idx].gun);
+		p_l[idx].gun = 0;
+		}
+		int nx;
+		int ny;
+		while(true){
+			nx = cx +dx[cd];
+			ny = cy +dy[cd];
+			if(inRange(nx,ny) && check(new int[] {nx,ny}) ==-1)
+				break;
+			cd = (cd+1)%4;
+		}
+		int gun = weapon_take(nx,ny);
+		p_l[idx].x = nx;
+		p_l[idx].y = ny;
+		p_l[idx].dir = cd;
+		p_l[idx].gun = Math.max(p_l[idx].gun,gun);
+	}
+	static void win(int idx){
+		p_l[idx].gun = Math.max(p_l[idx].gun,weapon_take(p_l[idx].x,p_l[idx].y));
+	}
+	static int weapon_take(int x, int y){
+		//총이 없으면 -1,
+		ArrayList<Integer> weapons = map[x][y];
+		int gun = -1;
+//		if(weapons.size()==0){return gun;}
+		for(int i = 0 ;i < weapons.size();i++){
+			gun = Math.max(gun,weapons.get(i));
+		}
+		return gun ;
+	}
+	static int check(int[] pos){
+		// return : 없는경우는 -1, 플레이어가 있는 경우는 index를 리턴해준다
+		//
+		for(int i = 0 ; i< p_l.length;i++){
+			if(p_l[i].x == pos[0] && p_l[i].y == pos[1]){
+				return i;
+			}
+		}
+		return -1;
+	}
+	static int[] move(person p){
+		int cx = p.x;
+		int cy = p.y;
+		int cd = p.dir;
+		int nx = cx+dx[cd];
+		int ny = cy+dy[cd];
+		if(!inRange(nx,ny)){
+			cd = (cd+2)%4;
+			nx = cx+dx[cd];
+			ny = cy+dy[cd];
+		}
+		return new int[] {nx,ny, cd};
+	}// 사람의 다음 위치를 구하는 함수
 	static void answer() {
 		for(int a : point) System.out.print(a+" ");
 		System.out.println();
@@ -86,8 +183,5 @@ public class Main_싸움땅 {
 	
 	
 	//true는 p1 false p2
-	static boolean fight(person p1, person p2) {
-		
-		return true; 
-	}
+
 }
