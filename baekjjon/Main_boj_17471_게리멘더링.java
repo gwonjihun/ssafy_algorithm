@@ -60,14 +60,14 @@ public class Main_boj_17471_게리멘더링 {
 	}
 	static void solution(ArrayList<Integer> A) {
 		//먼저 그래프가 모두 연결이 가능한가를 확인해줘야함
-		if(!connection(A)) {
-			return;
-		}
+//		if(!connection(A)) {
+//			return;
+//		}
 		ArrayList<Integer> B = new ArrayList<>();
 //		for(i=)
 	}
-	static boolean connection(ArrayList<Integer> A) {
-		//여기서 이제 돌아가야하는데 
-	}
+//	static boolean connection(ArrayList<Integer> A) {
+//		//여기서 이제 돌아가야하는데 
+//	}
 	
 }
