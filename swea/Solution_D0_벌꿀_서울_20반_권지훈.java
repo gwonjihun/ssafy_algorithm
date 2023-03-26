@@ -1,4 +1,4 @@
-package swea;
+package gwonjihun.swea;
 import java.io.*;
 import java.util.*;
 

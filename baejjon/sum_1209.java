@@ -1,0 +1,61 @@
+package gwonjihun.baejjon;
+
+import java.util.Scanner;
+import java.io.FileInputStream;
+public class sum_1209 {
+    public static void main(String args[]) throws Exception
+    {
+		/*
+		   ?•„?ž˜?˜ ë©”ì†Œ?“œ ?˜¸ì¶œì? ?•ž?œ¼ë¡? ?‘œì¤? ?ž…? ¥(?‚¤ë³´ë“œ) ???‹  input.txt ?ŒŒ?¼ë¡œë??„° ?½?–´?˜¤ê² ë‹¤?Š” ?˜ë¯¸ì˜ ì½”ë“œ?ž…?‹ˆ?‹¤.
+		   ?—¬?Ÿ¬ë¶„ì´ ?ž‘?„±?•œ ì½”ë“œë¥? ?…Œ?Š¤?Š¸ ?•  ?•Œ, ?Ž¸?˜ë¥? ?œ„?•´?„œ input.txt?— ?ž…? ¥?„ ???ž¥?•œ ?›„,
+		   ?´ ì½”ë“œë¥? ?”„ë¡œê·¸?ž¨?˜ ì²˜ìŒ ë¶?ë¶„ì— ì¶”ê??•˜ë©? ?´?›„ ?ž…? ¥?„ ?ˆ˜?–‰?•  ?•Œ ?‘œì¤? ?ž…? ¥ ???‹  ?ŒŒ?¼ë¡œë??„° ?ž…? ¥?„ ë°›ì•„?˜¬ ?ˆ˜ ?žˆ?Šµ?‹ˆ?‹¤.
+		   ?”°?¼?„œ ?…Œ?Š¤?Š¸ë¥? ?ˆ˜?–‰?•  ?•Œ?—?Š” ?•„?ž˜ ì£¼ì„?„ ì§??š°ê³? ?´ ë©”ì†Œ?“œë¥? ?‚¬?š©?•˜?…”?„ ì¢‹ìŠµ?‹ˆ?‹¤.
+		   ?‹¨, ì±„ì ?„ ?œ„?•´ ì½”ë“œë¥? ? œì¶œí•˜?‹¤ ?•Œ?—?Š” ë°˜ë“œ?‹œ ?´ ë©”ì†Œ?“œë¥? ì§??š°ê±°ë‚˜ ì£¼ì„ ì²˜ë¦¬ ?•˜?…”?•¼ ?•©?‹ˆ?‹¤.
+		 */
+        //System.setIn(new FileInputStream("res/input.txt"));
+
+		/*
+		   ?‘œì¤??ž…? ¥ System.in ?œ¼ë¡œë??„° ?Š¤ìºë„ˆë¥? ë§Œë“¤?–´ ?°?´?„°ë¥? ?½?–´?˜µ?‹ˆ?‹¤.
+		 */
+        Scanner sc = new Scanner(System.in);
+
+		/*
+		   ?—¬?Ÿ¬ ê°œì˜ ?…Œ?Š¤?Š¸ ì¼??´?Š¤ê°? ì£¼ì–´ì§?ë¯?ë¡?, ê°ê°?„ ì²˜ë¦¬?•©?‹ˆ?‹¤.
+		*/
+        for(int test_case = 1; test_case <= 10; test_case++)
+        {
+            int n = sc.nextInt();
+            int max_sum = 0;
+            int[][] arr = new int[100][100];
+//          ?ž…? ¥?„ ë¨¼ì? ??‚¸?‹¤
+            for(int i=0;i<100;i++) {
+                for (int j = 0; j < 100; j++) {
+                    arr[i][j] = sc.nextInt();
+                   }
+            }
+            // 2ì¤? ?¬ë¬¸ì„ ?™„? „?ƒ?ƒ‰?„ 2ë²? ?Œë¦¬ëŠ”ê±°ëŠ” ?‹œê°„ì´ ?˜¤?ž˜ê±¸ë¦¼
+            for(int i=0;i<100;i++) {
+                int x_sum =0, y_sum = 0;
+                for (int j = 0; j < 100; j++) {
+                    x_sum+=arr[i][j];
+                    y_sum+=arr[j][i];
+                }
+                max_sum = Math.max(max_sum,Math.max(y_sum,x_sum));
+            }
+            int left_sum=0,right_sum = 0;
+            for(int i=0;i<100;i++){
+                left_sum+=arr[i][i];
+                right_sum+=arr[i][arr.length-1-i];
+            }
+            max_sum=Math.max(max_sum,Math.max(left_sum,right_sum));
+
+            System.out.println("#"+test_case+" "+max_sum);
+            /////////////////////////////////////////////////////////////////////////////////////////////
+			/*
+				 ?´ ë¶?ë¶„ì— ?—¬?Ÿ¬ë¶„ì˜ ?•Œê³ ë¦¬ì¦? êµ¬í˜„?´ ?“¤?–´ê°‘ë‹ˆ?‹¤.
+			 */
+            /////////////////////////////////////////////////////////////////////////////////////////////
+
+        }
+    }
+}
