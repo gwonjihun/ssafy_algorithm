@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.io.*;
 import java.util.*;
 
-public class Main_boj_20056_?ƒ?–´???ŒŒ?´?–´ë³?2_fail {
+public class Main_boj_20056_ìƒì–´ì™€íŒŒì´ì–´ë³¼2_fail {
 	static int N, M, K;
 	static int[] dx = { -1, -1, 0, 1, 1, 1, 0, -1 }, dy = { 0, 1, 1, 1, 0, -1, -1, -1 };
 
@@ -26,9 +26,9 @@ public class Main_boj_20056_?ƒ?–´???ŒŒ?´?–´ë³?2_fail {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-		N = Integer.parseInt(st.nextToken());// ë°°ì—´?˜ ?¬ê¸?
-		M = Integer.parseInt(st.nextToken());// ?‹œ?‘ ?ŒŒ?´?–´ë³? ê°??ˆ˜
-		K = Integer.parseInt(st.nextToken());// ?´?™ ?šŸ?ˆ˜
+		N = Integer.parseInt(st.nextToken());// ë°°ì—´?ï¿½ï¿½ ?ï¿½ï¿½ï¿½?
+		M = Integer.parseInt(st.nextToken());// ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½? ï¿½??ï¿½ï¿½
+		K = Integer.parseInt(st.nextToken());// ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½
 
 		map = new List[N][N];
 		for (int i = 0; i < N; i++) {
@@ -45,7 +45,7 @@ public class Main_boj_20056_?ƒ?–´???ŒŒ?´?–´ë³?2_fail {
 			int d = Integer.parseInt(st.nextToken());
 			map[x][y].add(new fireball(m, s, d));
 		}
-		// ?´? œ
+		// ?ï¿½ï¿½?ï¿½ï¿½
 		int cnt = 0;
 		for (int k = 0; k < K; k++) {
 			List<fireball>[][] temp = new ArrayList[N][N];
@@ -53,11 +53,11 @@ public class Main_boj_20056_?ƒ?–´???ŒŒ?´?–´ë³?2_fail {
 				for (int j = 0; j < N; j++) {
 					temp[i][j] = new ArrayList<fireball>();
 				}
-			} // ?´?™?œ ê²°ê³¼ë¥? ???¥?•˜ê¸? ?œ„?•œ temp LIST
+			} // ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ê²°ê³¼ï¿½? ???ï¿½ï¿½?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½ temp LIST
 			//
-			// k?Š” ?‹œê°?
-			// tempë¥? ?†µ?•´?„œ
-			// ë¨¼ì? temp ë¥? ?†µ?•´?„œ ?ŒŒ?´?–´ë³¼ì„ ?´?™ ?‹œ?‚¨?›„ ?›?˜ map?—?‹¤ê°? temp ?„£?–´ì£¼ê¸°
+			// k?ï¿½ï¿½ ?ï¿½ï¿½ï¿½?
+			// tempï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
+			// ë¨¼ï¿½? temp ï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ë³¼ì„ ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ map?ï¿½ï¿½?ï¿½ï¿½ï¿½? temp ?ï¿½ï¿½?ï¿½ï¿½ì£¼ê¸°
 			//
 			for (int i = 0; i < N; i++) {
 				for (int j = 0; j < N; j++) {
@@ -67,19 +67,19 @@ public class Main_boj_20056_?ƒ?–´???ŒŒ?´?–´ë³?2_fail {
 							int nx = (N + i + dx[cur.d] * (cur.s % N)) % N;
 							int ny = (N + j + dy[cur.d] * (cur.s % N)) % N;
 							temp[nx][ny].add(new fireball(cur.m, cur.s, cur.d));
-							// ?šŸ?ˆ˜ë§Œí¼ ?“¤?–´ê°?ì§?
+							// ?ï¿½ï¿½?ï¿½ï¿½ë§Œí¼ ?ï¿½ï¿½?ï¿½ï¿½ï¿½?ï¿½?
 
 
 						}
 					}
 				}
-			} // ?ŒŒ?´?–´ ë³¼ì˜ ?´?™
+			} // ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ë³¼ì˜ ?ï¿½ï¿½?ï¿½ï¿½
 
 			for(int i=0;i<N;i++) {
 				for(int j = 0; j<N;j++) {
 					map[i][j] = temp[i][j];
 				}
-			}// ê°±ì‹ ê¹Œì??Š” ë¬¸ì œê°? ?—†?Œ
+			}// ê°±ì‹ ê¹Œï¿½??ï¿½ï¿½ ë¬¸ì œï¿½? ?ï¿½ï¿½?ï¿½ï¿½
 
 			
 			for(int i=0;i<N;i++) {
@@ -114,13 +114,13 @@ public class Main_boj_20056_?ƒ?–´???ŒŒ?´?–´ë³?2_fail {
 							}
 						}
 						}
-						//?–´ì°¨í”¼ 1ê°œì¸ ê³³ì? ?œ„?—ê°??„œ ?•Œ?•„?„œ ?´?™?•˜?‹Œê¹? ì§??‚˜ê°??„ ?œ?‹¤.
+						//?ï¿½ï¿½ì°¨í”¼ 1ê°œì¸ ê³³ï¿½? ?ï¿½ï¿½?ï¿½ï¿½ï¿½??ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½? ï¿½??ï¿½ï¿½ï¿½??ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½.
 						
 						
 					}
 					
 				}
-			}// ê°±ì‹ ê¹Œì??Š” ë¬¸ì œê°? ?—†?Œ
+			}// ê°±ì‹ ê¹Œï¿½??ï¿½ï¿½ ë¬¸ì œï¿½? ?ï¿½ï¿½?ï¿½ï¿½
 			cnt = check();
 			if (cnt == 0) {
 				break;

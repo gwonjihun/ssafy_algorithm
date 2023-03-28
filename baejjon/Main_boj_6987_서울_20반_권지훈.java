@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.util.*;
 import java.io.*;
 
-public class Main_boj_6987_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_6987_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ{
 
 	static int[] g1 = {0,0,0,0,0,1,1,1,1,2,2,2,3,3,4};
     static int[] g2 = {1,2,3,4,5,2,3,4,5,3,4,5,4,5,5};
@@ -30,7 +30,7 @@ public class Main_boj_6987_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
                 sd += draw[i] = Integer.parseInt(st.nextToken());
                 sl += lose[i] = Integer.parseInt(st.nextToken());
             }
-            // ì´? ?Š¹/ë¬?/?Œ¨?˜ ?•©?? 30?´ ?˜?–´?•¼?•¨.
+            // ï¿½? ?ï¿½ï¿½/ï¿½?/?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?? 30?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½.
             if(sw+ sd + sl != 30) {
                 ok = false;
             }
@@ -45,7 +45,7 @@ public class Main_boj_6987_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
     static void solve(int game) {
         if(ok) return ;
         
-        // ë§ˆì?ë§? ê²Œì„ê¹Œì? ?™”?‹¤ë©?, ê°??Š¥?•œê²½ìš°
+        // ë§ˆï¿½?ï¿½? ê²Œì„ê¹Œï¿½? ?ï¿½ï¿½?ï¿½ï¿½ï¿½?, ï¿½??ï¿½ï¿½?ï¿½ï¿½ê²½ìš°
         if(game == 15) {
             ok = true;
             return ;
@@ -54,7 +54,7 @@ public class Main_boj_6987_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
         int t1 = g1[game];    // team 1
         int t2 = g2[game];    // team 2
         
-        // team 1?˜ ?Š¹ë¦¬ê? ê°??Š¥?•˜?‹¤ë©?
+        // team 1?ï¿½ï¿½ ?ï¿½ï¿½ë¦¬ï¿½? ï¿½??ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½?
         if(win[t1] > 0 && lose [t2] >0) {
             win[t1]--;
             lose[t2]--;
@@ -62,7 +62,7 @@ public class Main_boj_6987_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
             win[t1]++;
             lose[t2]++;
         }
-        // team 2?˜ ?Š¹ë¦¬ê? ê°??Š¥?•˜?‹¤ë©?
+        // team 2?ï¿½ï¿½ ?ï¿½ï¿½ë¦¬ï¿½? ï¿½??ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½?
         if(lose[t1] > 0 && win [t2] >0) {
             lose[t1]--;
             win[t2]--;
@@ -70,7 +70,7 @@ public class Main_boj_6987_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
             lose[t1]++;
             win[t2]++;
         }
-        // team 1,2 ê°? ë¬´ìŠ¹ë¶?ê°? ê°??Š¥?•˜?‹¤ë©?
+        // team 1,2 ï¿½? ë¬´ìŠ¹ï¿½?ï¿½? ï¿½??ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½?
         if(draw[t1] > 0 && draw[t2] >0) {
             draw[t1]--;
             draw[t2]--;

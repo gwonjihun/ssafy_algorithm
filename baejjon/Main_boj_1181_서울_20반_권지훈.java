@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.io.*;
 import java.util.*;
 
-public class Main_boj_1181_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_1181_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
 	static int N;
 	static List<String> s;
 	public static void main(String[] args) throws Exception{

@@ -2,7 +2,7 @@ package gwonjihun.baejjon;
 
 import java.util.*;
 import java.io.*;
-public class Main_boj_17144_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_17144_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
     static int N, M, T, up= -1;
     static int[][] arr;
     static int[] dx = {1,-1,0,0}, dy = {0,0,-1,1};
@@ -79,7 +79,7 @@ public class Main_boj_17144_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
         for(int i = M-1;i>=1;i--){
             if(i == 1){arr[x][i] = 0; continue;}
             if(i == M-1) {
-                temp = arr[x][i]; // ?ê°? ???¥
+                temp = arr[x][i]; // ?ï¿½ï¿½ï¿½? ???ï¿½ï¿½
             }
             arr[x][i] = arr[x][i-1];
         }
@@ -105,7 +105,7 @@ public class Main_boj_17144_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
         for(int i = M-1;i>=1;i--){
             if(i == 1){arr[x][i] = 0; continue;}
             if(i == M-1) {
-                temp = arr[x][i]; // ?ê°? ???¥
+                temp = arr[x][i]; // ?ï¿½ï¿½ï¿½? ???ï¿½ï¿½
             }
             arr[x][i] = arr[x][i-1];
         }

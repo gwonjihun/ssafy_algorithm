@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.io.*;
 import java.util.*;
 
-public class Main_boj_20056_?ƒ?–´???ŒŒ?´?–´ë³? {
+public class Main_boj_20056_ìƒì–´ì™€íŒŒì´ì–´ë³¼ {
 	static int N, M, K;
 	static int[] dx = { -1, -1, 0, 1, 1, 1, 0, -1 }, dy = { 0, 1, 1, 1, 0, -1, -1, -1 };
 
@@ -26,9 +26,9 @@ public class Main_boj_20056_?ƒ?–´???ŒŒ?´?–´ë³? {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-		N = Integer.parseInt(st.nextToken());// ë°°ì—´?˜ ?¬ê¸?
-		M = Integer.parseInt(st.nextToken());// ?‹œ?‘ ?ŒŒ?´?–´ë³? ê°??ˆ˜
-		K = Integer.parseInt(st.nextToken());// ?´?™ ?šŸ?ˆ˜
+		N = Integer.parseInt(st.nextToken());// ë°°ì—´?ï¿½ï¿½ ?ï¿½ï¿½ï¿½?
+		M = Integer.parseInt(st.nextToken());// ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½? ï¿½??ï¿½ï¿½
+		K = Integer.parseInt(st.nextToken());// ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½
 
 		map = new List[N][N];
 		for (int i = 0; i < N; i++) {

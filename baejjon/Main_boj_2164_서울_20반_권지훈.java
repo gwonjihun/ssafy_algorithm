@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class Main_boj_2164_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_2164_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
 	public static void main(String args[]) throws Exception {
 		Deque<Integer> card = new ArrayDeque<>();
 		

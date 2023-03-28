@@ -4,7 +4,7 @@ package gwonjihun.baejjon;
 import java.io.*;
 import java.util.*;
 
-public class Main_boj_1916_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_pq {
+public class Main_boj_1916_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ_pq {
 	
 	static final int INF=Integer.MAX_VALUE;
 	
@@ -24,7 +24,7 @@ public class Main_boj_1916_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_pq {
 		dist[start] = 0;
 		
 		while(!pq.isEmpty()) {
-			int now = pq.peek()[0]; // 0?? to?˜ ê°?
+			int now = pq.peek()[0]; // 0?? to?ï¿½ï¿½ ï¿½?
 			pq.poll();
 			
 			if(visited[now]) continue;
@@ -51,7 +51,7 @@ public class Main_boj_1916_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_pq {
 		M = Integer.parseInt(br.readLine());
 		
 		g = new ArrayList[N+1];	
-		// ê·¸ë˜?”„ë¥? ?ƒ?„±
+		// ê·¸ë˜?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½
 		for(int i=0; i<=N; i++) g[i] = new ArrayList<>();
 		
 		for(int i=0; i<M; i++) {

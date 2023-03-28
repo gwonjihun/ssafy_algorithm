@@ -3,15 +3,15 @@ package gwonjihun.baejjon;
 import java.util.*;
 import java.io.*;
 
-class pair{
-    int x;
-    int y;
-    pair(int x, int y){
-        this.x = x;
-        this.y = y;
-    }
-}
-public class Solution_swTest_?”„ë¡œì„¸?„œ_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Solution_swTest_í”„ë¡œì„¸ì„œ_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
+	static class pair{
+		int x;
+		int y;
+		pair(int x, int y){
+			this.x = x;
+			this.y = y;
+		}
+	}
     private static int T, N, size, min;
     private static int arr[][], dx[] = {-1, 1, 0, 0}, dy[] = {0, 0, -1, 1};
     private static pair core[];
@@ -31,10 +31,10 @@ public class Solution_swTest_?”„ë¡œì„¸?„œ_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
 
     public static void dfs(int idx, int cnt) {
         if(idx == size) {
-            min = Math.min(min, cnt); // ë°°ì—´ ?ê¹Œì? ?Œ? ¸?œ¼ë©? ?´?•Œ?˜ ìµœì†Ÿê°? ê°±ì‹ 
+            min = Math.min(min, cnt); // ë°°ì—´ ?ï¿½ï¿½ê¹Œï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ìµœì†Ÿï¿½? ê°±ì‹ 
             return;
         }
-        if(!chk[idx]) { // ë¶?ë¶? ì§‘í•©?— ?¬?•¨?˜?Š” ?• ?“¤ë§? ?‹¤?Œ ?‹¨ê³„ë¡œ ?„˜?–´ê°? ?ˆ˜ ?ˆ?‹¤.
+        if(!chk[idx]) { // ï¿½?ï¿½? ì§‘í•©?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½ê³„ë¡œ ?ï¿½ï¿½?ï¿½ï¿½ï¿½? ?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½.
             dfs(idx + 1, cnt);
             return;
         }
@@ -43,16 +43,16 @@ public class Solution_swTest_?”„ë¡œì„¸?„œ_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
             boolean success = false;
             while(true) {
                 x += dx[i]; y += dy[i];
-                if(x < 0 || x >= N || y < 0 || y >= N) { // ë²”ìœ„ ?ê¹Œì? ê°”ìœ¼ë©? ?„±ê³?
+                if(x < 0 || x >= N || y < 0 || y >= N) { // ë²”ìœ„ ?ï¿½ï¿½ê¹Œï¿½? ê°”ìœ¼ï¿½? ?ï¿½ï¿½ï¿½?
                     success = true;
                     break;
                 }
-                if(arr[x][y] != 0) break; // ? „?„ ?´?‚˜ ì½”ì–´ë¥? ë§Œë‚˜ë©? ?‹¤?Œ¨
-                arr[x][y] = 2; // ? „?„  ?‘œ?‹œ
-                tmp++; // ? „?„  ê¸¸ì´ ?•©
+                if(arr[x][y] != 0) break; // ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ì½”ì–´ï¿½? ë§Œë‚˜ï¿½? ?ï¿½ï¿½?ï¿½ï¿½
+                arr[x][y] = 2; // ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½
+                tmp++; // ?ï¿½ï¿½?ï¿½ï¿½ ê¸¸ì´ ?ï¿½ï¿½
             }
             if(success) dfs(idx + 1, cnt + tmp);
-            while(true) { // ?› ?ƒ?ƒœë¡? ?Œ? ¤?†“ê¸?
+            while(true) { // ?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½?
                 x -= dx[i]; y -= dy[i];
                 if(x == core[idx].x && y == core[idx].y) break;
                 arr[x][y] = 0;
@@ -68,11 +68,11 @@ public class Solution_swTest_?”„ë¡œì„¸?„œ_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
             arr = new int[N][N]; core = new pair[12]; chk = new boolean[12];
             size = 0; min = Integer.MAX_VALUE;
             for(int i = 0; i < N; i++) for(int j = 0; j < N; j++) arr[i][j] = sc.nextInt();
-            for(int i = 1; i < N - 1; i++) for(int j = 1; j < N - 1; j++) if(arr[i][j] == 1) core[size++] = new pair(i, j); // ê°??¥?ë¦? ë¹¼ê³ 
+            for(int i = 1; i < N - 1; i++) for(int j = 1; j < N - 1; j++) if(arr[i][j] == 1) core[size++] = new pair(i, j); // ï¿½??ï¿½ï¿½?ï¿½ï¿½ï¿½? ë¹¼ê³ 
 
             for(int i = size; i >= 0; i--) {
                 combination(0, 0, i);
-                if(min < Integer.MAX_VALUE) break; // ìµœì†Ÿê°’ì´ ê°±ì‹ ?˜?–´ ?ˆ?œ¼ë©? ê²°ê³¼ê°? ?‚˜?™”?‹¤?Š” ?œ»?„
+                if(min < Integer.MAX_VALUE) break; // ìµœì†Ÿê°’ì´ ê°±ì‹ ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ï¿½? ê²°ê³¼ï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½
             }
 
             System.out.println("#" + t + " " + min);

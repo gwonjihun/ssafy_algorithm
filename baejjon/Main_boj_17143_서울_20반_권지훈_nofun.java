@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.util.*;
 import java.io.*;
 
-public class Main_boj_17143_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_nofun {
+public class Main_boj_17143_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ_nofun {
 
 	static class shark {
 
@@ -19,10 +19,10 @@ public class Main_boj_17143_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_nofun {
 	}
 	static shark[][] map;
 	static shark[][] temp;
-	static int p = -1, H, W, cnt = 0; // ?‚¬?Œ?´ ?ˆ?Š” ?œ„ì¹˜ëŠ” cnt?Š” ?‚¬?Œ?´ ?¡?? ?ƒ?–´?˜ ?ˆ˜
+	static int p = -1, H, W, cnt = 0; // ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½ì¹˜ëŠ” cnt?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½
 	static int[] dx = { -1, 1, 0, 0 }, dy = { 0, 0, 1, -1 };
 
-	// ë²½ì„ ë§Œë‚˜?„œ ?ƒ?–´ê°? ë°˜ë? ë°©í–¥?œ¼ë¡? ?šŒ? „?•˜?Š” ë°©ë²•?? d+5%4
+	// ë²½ì„ ë§Œë‚˜?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ï¿½? ë°˜ï¿½? ë°©í–¥?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ë°©ë²•?? d+5%4
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
@@ -50,7 +50,7 @@ public class Main_boj_17143_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_nofun {
 			temp = new shark[H][W];
 			for (int i = 0; i < H; i++) {
 				for (int j = 0; j < W; j++) {
-					// ?—¬ê¸°ì„œ ?ƒ?–´ê°? ?´?™?•´?•¼?•˜?Š”?° ë¨¼ì? temp shark 2ì°¨ì›?–‰? ¬?„ ë§Œë“¤?–´ì¤??‹¤
+					// ?ï¿½ï¿½ê¸°ì„œ ?ï¿½ï¿½?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ë¨¼ï¿½? temp shark 2ì°¨ì›?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ë§Œë“¤?ï¿½ï¿½ï¿½??ï¿½ï¿½
 					if (map[i][j] != null) {
 						int x = i;
 						int y = j;
@@ -58,13 +58,13 @@ public class Main_boj_17143_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_nofun {
 						int dir = map[i][j].dir;
 						int speed = map[i][j].speed;
 						
-						if(dir == 0 || dir == 1) // ?ƒ ?•˜
+						if(dir == 0 || dir == 1) // ?ï¿½ï¿½ ?ï¿½ï¿½
 							speed %= (H -1) * 2; 
-						else if(dir == 2 || dir == 3) // ì¢? ?š°
+						else if(dir == 2 || dir == 3) // ï¿½? ?ï¿½ï¿½
 							speed %= (W -1) * 2;
 						
 						for (int l = 0; l < speed; l++) {
-							// nxë¡? ?…‹?Œ…?„ ?•´ì¤˜ì•¼?•œ?‹¤.
+							// nxï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½ì¤˜ì•¼?ï¿½ï¿½?ï¿½ï¿½.
 //							System.out.println(dir);
 							int nx = x + dx[dir];
 							int ny = y + dy[dir];
@@ -85,7 +85,7 @@ public class Main_boj_17143_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_nofun {
 
 			for (int i = 0; i < H; i++) {
 				for (int j = 0; j < W; j++) {
-					// ?ƒ?–´?˜ ?´?™ê³? ?‹¸???´ ??‚œ?’¤?˜ tempë¥? ?›?˜ map?— ë°˜ì˜
+					// ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ï¿½? ?ï¿½ï¿½???ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ tempï¿½? ?ï¿½ï¿½?ï¿½ï¿½ map?ï¿½ï¿½ ë°˜ì˜
 					map[i][j] = temp[i][j];
 				}
 			}

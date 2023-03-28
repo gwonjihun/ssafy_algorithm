@@ -24,7 +24,7 @@ class tree {
 	}
 }
 
-public class Main_boj_16235_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_16235_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
 
 	public static void main(String[] args) throws Exception{
 		
@@ -70,21 +70,21 @@ public class Main_boj_16235_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
 			st = new StringTokenizer(br.readLine()," ");
 			tli.add(new tree(Integer.parseInt(st.nextToken()),Integer.parseInt(st.nextToken()),Integer.parseInt(st.nextToken())));
 		}
-		// ?‚˜ë¬? ë¦¬ìŠ¤?Š¸ ?ž…? ¥
+		// ?ï¿½ï¿½ï¿½? ë¦¬ìŠ¤?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½
 
 		// 1000 => 3000
 		for(int k=0;k<K;k++){
-			//ë´?
+			//ï¿½?
 			for(int i = 0; i<tli.size();) {
 				tree t = tli.poll();
 				if(eat[t.x][t.y]>=t.age) {
 					eat[t.x][t.y]-= t.age;
-					t.age +=1;//?—¬ê¸°ì„œ ?‚˜?´ì¦ê??‹œ?‚¤ê³? ?‹¤?‹œ size?— ?„£?–´ì¤˜ì•¼?•¨
+					t.age +=1;//?ï¿½ï¿½ê¸°ì„œ ?ï¿½ï¿½?ï¿½ï¿½ì¦ï¿½??ï¿½ï¿½?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½ size?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ì¤˜ì•¼?ï¿½ï¿½
 					i++;
 					tli.offer(t);
 				}else {
 					die_li.offer(t);
-				}// ì£½ì? ?‚˜ë¬? ë¦¬ìŠ¤?Š¸ë¥? ?„£?–´ì¤??‹¤
+				}// ì£½ï¿½? ?ï¿½ï¿½ï¿½? ë¦¬ìŠ¤?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½ï¿½??ï¿½ï¿½
 
 			}
 			
@@ -92,16 +92,16 @@ public class Main_boj_16235_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
 			
 			
 			
-			//?—¬ë¦? ì£½ìŒ ì²˜ë¦¬..?
+			//?ï¿½ï¿½ï¿½? ì£½ìŒ ì²˜ë¦¬..?
 			while(!die_li.isEmpty()){
 				tree t = die_li.poll();
 //				System.out.println(3);
 				eat[t.x][t.y] += t.age/2;
 			}
 //			System.out.println(tli.size());
-			//ê°??„ 
-//			temp deque?— ?žˆ?Š” ?‚˜ë¬´ë“¤??-> ë²ˆì‹?•´?•¼?•œ?‹¤.
-// 			ê·¸ë¦¬ê³? ?‚˜ë¬´ë?? ë¦¬ìŠ¤?Š¸?— ?„£?–´ì¤„ë•Œ ?•ž?—?‹¤ê°? ?„£?–´ì¤??‹¤.
+			//ï¿½??ï¿½ï¿½ 
+//			temp deque?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½ë¬´ë“¤??-> ë²ˆì‹?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½.
+// 			ê·¸ë¦¬ï¿½? ?ï¿½ï¿½ë¬´ï¿½?? ë¦¬ìŠ¤?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ì¤„ë•Œ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½ï¿½??ï¿½ï¿½.
 			Deque<tree> temp = new ArrayDeque<>();
 			for(tree t : tli) {
 				if (t.age%5 ==0)

@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.io.*;
 import java.util.*;
 
-public class main_boj_20055_ì»¨ë² ?´?–´ë²¨í”„ {
+public class main_boj_20055_ì»¨ë² ì´ì–´ë²¨í”„{
 
 
 
@@ -26,13 +26,13 @@ public class main_boj_20055_ì»¨ë² ?´?–´ë²¨í”„ {
 
 		while(check()) {
 
-			//ë°°ì—´?„ ?šŒ? „?•œ?‹¤
+			//ë°°ì—´?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
 			int temp = balt[balt.length - 1];
 			for (int i =balt.length - 1; i > 0; i--) {
 				balt[i] = balt[i - 1];
 			}
 			balt[0] = temp;
-			//ë¡œë´‡?šŒ? „
+			//ë¡œë´‡?ï¿½ï¿½?ï¿½ï¿½
 			for(int i=robot.length-1; i>0;i--){
 				robot[i] = robot[i-1];
 			}

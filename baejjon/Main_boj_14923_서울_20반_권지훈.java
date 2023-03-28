@@ -1,5 +1,5 @@
 package gwonjihun.baejjon;
 
-public class Main_boj_14923_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_14923_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
 
 }

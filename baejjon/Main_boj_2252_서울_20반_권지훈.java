@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 
-public class Main_boj_2252_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_2252_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
 	static class Node{
 		int vertex;
 		Node link;

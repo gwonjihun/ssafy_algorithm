@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.util.*;
 import java.io.*;
 
-public class Main_boj_13549_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_13549_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
 	
 	static int mins= Integer.MAX_VALUE,num=1;
 	static boolean[] v = new boolean[100_001];

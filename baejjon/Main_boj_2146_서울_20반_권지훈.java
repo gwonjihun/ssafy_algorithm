@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.io.*;
 import java.util.*;
 
-public class Main_boj_2146_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_2146_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
 
 	static int[] dx = { 0, 0, 1, -1 }, dy = { 1, -1, 0, 0 };
 	static int[][] map;
@@ -31,7 +31,7 @@ public class Main_boj_2146_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
 				if (v[i][j]) {
 					continue;
 				}
-				// ?„¬ë§ˆë‹¤
+				// ?ï¿½ï¿½ë§ˆë‹¤
 				if (!v[i][j] && map[i][j] != 0) {
 					bfs(i, j, land);
 					land += 1;
@@ -77,7 +77,7 @@ public class Main_boj_2146_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
 				int nx = xy[0] + dx[d];
 				int ny = xy[1] + dy[d];
 				if (0 <= nx && nx < N && 0 <= ny && ny < N && !v[nx][ny] && map[nx][ny]!= start) {
-					// ?žê¸? ?ž?‹ ?˜ ?„¬?„ ? œ?™¸?•˜ê³ ëŠ” ëª¨ë“  ë°”ë‹¤?? ?„¬?„ ë°©ë¬¸?•  ?ˆ˜ ?žˆ?–´?•¼?•œ?‹¤.
+					// ?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ê³ ëŠ” ëª¨ë“  ë°”ë‹¤?? ?ï¿½ï¿½?ï¿½ï¿½ ë°©ë¬¸?ï¿½ï¿½ ?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½.
 					v[nx][ny]=true;
 					if(map[nx][ny]==0){
 						q.addLast(new int[]{nx,ny, xy[2]+1});

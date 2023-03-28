@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.*;
 
 
-public class Main_boj_2573_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_2573_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
 	static int[][] arr;
 	static boolean[][] visited;
 	static int N, M;
@@ -68,7 +68,7 @@ public class Main_boj_2573_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
 		q.addLast(new int[] { r, c });
 
 		while (!q.isEmpty()) {
-//			System.out.println("?›„ë³? 1");
+//			System.out.println("?ï¿½ï¿½ï¿½? 1");
 			int[] xy = q.pollFirst();
 			visited[xy[0]][xy[1]] = true;
 			int melt = 0;

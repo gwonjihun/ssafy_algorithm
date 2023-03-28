@@ -2,7 +2,7 @@ package gwonjihun.baejjon;
 
 import java.util.*;
 import java.io.*;
-public class main_ë¶?ë¶„ì§‘?•© {
+public class main_ë¶€ë¶„ì§‘í•©{
 	static int N=4, R=3, C=0;
 	static int[] a = {1,2,3,4}, b= new int[R];
 	static boolean[] v = new boolean[N];
@@ -41,6 +41,6 @@ public class main_ë¶?ë¶„ì§‘?•© {
 	public static void main(String[] args) {
 		C=0;
 		subs(0,0);
-		System.out.println(C);// 2^n ë¶?ë¶„ì§‘?•©(subsets)
+		System.out.println(C);// 2^n ï¿½?ë¶„ì§‘?ï¿½ï¿½(subsets)
 	}
 }

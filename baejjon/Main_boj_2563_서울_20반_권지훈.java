@@ -2,7 +2,7 @@ package gwonjihun.baejjon;
 import java.util.*;
 import java.io.*;
 
-public class Main_boj_2563_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_2563_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine());

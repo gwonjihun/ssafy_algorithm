@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.util.*;
 import java.io.*;
 
-public class Main_boj_1074_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_1074_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
 	static int N, X,Y,cnt=0;
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -23,16 +23,16 @@ public class Main_boj_1074_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
 		}
 
 		int n = size / 2;
-		if (r < n && c < n) { // 1?‚¬ë¶„ë©´
+		if (r < n && c < n) { // 1?ï¿½ï¿½ë¶„ë©´
 			cnt += n * n * 0;
 			count(n, r, c);
-		} else if (r < n && c < n + n) { // 2?‚¬ë¶„ë©´
+		} else if (r < n && c < n + n) { // 2?ï¿½ï¿½ë¶„ë©´
 			cnt += n * n * 1;
 			count(n, r, c - n);
-		} else if (r < n + n && c < n) { // 3?‚¬ë¶„ë©´
+		} else if (r < n + n && c < n) { // 3?ï¿½ï¿½ë¶„ë©´
 			cnt += n * n * 2;
 			count(n, r - n, c);
-		} else if (r < n + n && c < n + n) { // 4?‚¬ë¶„ë©´
+		} else if (r < n + n && c < n + n) { // 4?ï¿½ï¿½ë¶„ë©´
 			cnt += n * n * 3;
 			count(n, r - n, c - n);
 		}

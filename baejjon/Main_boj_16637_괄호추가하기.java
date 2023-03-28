@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.io.*;
 import java.util.*;
 
-public class Main_boj_16637_ê´„í˜¸ì¶”ê??•˜ê¸? {
+public class Main_boj_16637_ê´„í˜¸ì¶”ê°€í•˜ê¸° {
 	static int[] nums;
 	static char[] chars;
 	static int N;
@@ -24,7 +24,7 @@ public class Main_boj_16637_ê´„í˜¸ì¶”ê??•˜ê¸? {
 				chars[c_idx++]= input[i];
 			}
 		}
-		//?´ê±¸ë¡œ ê¸°í˜¸ ?ˆ«? ë¶„ë¦¬
+		//?ï¿½ï¿½ê±¸ë¡œ ê¸°í˜¸ ?ï¿½ï¿½?ï¿½ï¿½ ë¶„ë¦¬
 		answer = Integer.MIN_VALUE;
 		dfs(nums[0],0);
 		
@@ -42,8 +42,8 @@ public class Main_boj_16637_ê´„í˜¸ì¶”ê??•˜ê¸? {
 			int res2 = cal(nums[chidx+1],chars[chidx+1],nums[chidx+2]);
 			dfs(cal(result,chars[chidx],res2),chidx+2);
 		}
-		//ê´„í˜¸ ?—†?´ ë°”ë¡œ ê³„ì‚° dfs
-		//ê´„í˜¸ ì¶”ê??•´?„œ dfs
+		//ê´„í˜¸ ?ï¿½ï¿½?ï¿½ï¿½ ë°”ë¡œ ê³„ì‚° dfs
+		//ê´„í˜¸ ì¶”ï¿½??ï¿½ï¿½?ï¿½ï¿½ dfs
 	}
 	static int cal(int result,char a,int num2 ) {
 		switch(a) {

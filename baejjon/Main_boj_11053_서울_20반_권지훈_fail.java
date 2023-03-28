@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.util.*;
 import java.io.*;
 
-public class Main_boj_11053_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_fail {
+public class Main_boj_11053_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ_fail {
 	static int[] arr,dp;
 	static int N;
 	static ArrayDeque<Integer> q;
@@ -37,7 +37,7 @@ public class Main_boj_11053_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_fail {
 
 	}
 }
-/* ?…? ¥ë°›ê³  ê·¸ê²Œ ê·¸ì „êº¼ë³´?‹¤ ?‘?œ¼ë©? dp+1
- * ê·¸ë¦¬ê³? ê·¸ì „êº? ê°’ë³´?‹¤ ?¬ë©? dp[i-1] = dp[i]
- * ê·¸ë ‡ê²? ?•´?„œ ìµ?
+/* ?ï¿½ï¿½?ï¿½ï¿½ë°›ê³  ê·¸ê²Œ ê·¸ì „êº¼ë³´?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ï¿½? dp+1
+ * ê·¸ë¦¬ï¿½? ê·¸ì „ï¿½? ê°’ë³´?ï¿½ï¿½ ?ï¿½ï¿½ï¿½? dp[i-1] = dp[i]
+ * ê·¸ë ‡ï¿½? ?ï¿½ï¿½?ï¿½ï¿½ ï¿½?
  * */

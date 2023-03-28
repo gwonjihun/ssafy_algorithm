@@ -2,7 +2,7 @@ package gwonjihun.baejjon;
 
 import java.io.*;
 import java.util.*;
-public class Main_boj_1911_ë¬¼ì›…?©?´ {
+public class Main_boj_1911_ë¬¼ì›…ë©ì´ {
 
     public static void main(String[] args) throws  Exception {
         BufferedReader br = new BufferedReader( new InputStreamReader(System.in));
@@ -25,8 +25,8 @@ public class Main_boj_1911_ë¬¼ì›…?©?´ {
             }
         });
 
-        int nulpan = 0;	// ?•„?š”?•œ ?„ë¹¤ì??˜ ê°œìˆ˜
-        int range = 0;	// ?„ë¹¤ì?ë¥? ë¬¼ì›…?®?´?— ?®?—ˆ?„?•Œ, ?®?„ ?ˆ˜ ?ˆ?Š” ë²”ìœ„
+        int nulpan = 0;	// ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½ë¹¤ï¿½??ï¿½ï¿½ ê°œìˆ˜
+        int range = 0;	// ?ï¿½ï¿½ë¹¤ï¿½?ï¿½? ë¬¼ì›…?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½, ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ ë²”ìœ„
         for(int i=0; i<N; i++) {
             if(arr[i][0] > range)
                 range = arr[i][0];

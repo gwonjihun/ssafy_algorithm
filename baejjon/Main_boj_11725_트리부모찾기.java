@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.io.*;
 import java.util.*;
 
-public class Main_boj_11725_?Š¸ë¦¬ë?ëª¨ì°¾ê¸? {
+public class Main_boj_11725_íŠ¸ë¦¬ë¶€ëª¨ì°¾ê¸°{
 	static List<Integer>[] map;
 	static int N;
 	public static void main(String[] args) throws Exception{
@@ -22,7 +22,7 @@ public class Main_boj_11725_?Š¸ë¦¬ë?ëª¨ì°¾ê¸? {
 			
 		}
 		boolean[] v = new boolean[N];
-		int[] parent = new int[N] ; // -> ê°’ì´ ë¶?ëª? ?„?Š
+		int[] parent = new int[N] ; // -> ê°’ì´ ï¿½?ï¿½? ?ï¿½ï¿½?ï¿½ï¿½
 		Queue<Integer> q = new ArrayDeque<>();
 		q.add(0);
 		v[0] = true;

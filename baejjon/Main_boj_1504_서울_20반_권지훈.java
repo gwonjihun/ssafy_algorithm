@@ -15,7 +15,7 @@ class Point implements Comparable<Point>{
     }
 }
 
-public class Main_boj_1504_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_1504_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
     private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     private static final BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     private static final int INF = 200_000_000;
@@ -30,7 +30,7 @@ public class Main_boj_1504_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
         n = Integer.parseInt(st.nextToken());
         v = Integer.parseInt(st.nextToken());
 
-        // ê·¸ëž˜?”„ ? •ë³? ???ž¥?•  listë¥? ì´ˆê¸°?™”?•œ?‹¤.
+        // ê·¸ëž˜?ï¿½ï¿½ ?ï¿½ï¿½ï¿½? ???ï¿½ï¿½?ï¿½ï¿½ listï¿½? ì´ˆê¸°?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½.
         list = new ArrayList[n + 1];
         for(int i = 0; i <= n; i++)
             list[i] = new ArrayList<>();
@@ -38,7 +38,7 @@ public class Main_boj_1504_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
         dist = new int[n + 1];
         check = new boolean[n + 1];
 
-        // ê°„ì„  ? •ë³? ì´ˆê¸°?™”
+        // ê°„ì„  ?ï¿½ï¿½ï¿½? ì´ˆê¸°?ï¿½ï¿½
         for(int i = 0 ; i < v; i++){
             st = new StringTokenizer(br.readLine());
 
@@ -46,19 +46,19 @@ public class Main_boj_1504_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
             int end = Integer.parseInt(st.nextToken());
             int weight = Integer.parseInt(st.nextToken());
 
-            // list?— graph? •ë³? ???ž¥ list?˜ index?Š” ì¶œë°œ?…¸?“œ
-            // element?Š” ?„ì°©ë…¸?“œ?? ê°?ì¤‘ì¹˜ë¥? ???ž¥?•œ?‹¤.
+            // list?ï¿½ï¿½ graph?ï¿½ï¿½ï¿½? ???ï¿½ï¿½ list?ï¿½ï¿½ index?ï¿½ï¿½ ì¶œë°œ?ï¿½ï¿½?ï¿½ï¿½
+            // element?ï¿½ï¿½ ?ï¿½ï¿½ì°©ë…¸?ï¿½ï¿½?? ï¿½?ì¤‘ì¹˜ï¿½? ???ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½.
             list[start].add(new Point(end, weight));
-            // ë¬´ë°©?–¥ ê·¸ëž˜?”„?´ë¯?ë¡? ë°˜ë??„ ì¶”ê??•´ì¤??‹¤.
+            // ë¬´ë°©?ï¿½ï¿½ ê·¸ëž˜?ï¿½ï¿½?ï¿½ï¿½ï¿½?ï¿½? ë°˜ï¿½??ï¿½ï¿½ ì¶”ï¿½??ï¿½ï¿½ï¿½??ï¿½ï¿½.
             list[end].add(new Point(start, weight));
         }
 
-        // ?•„?ˆ˜ ?…¸?“œ ì´ˆê¸°?™”
+        // ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ ì´ˆê¸°?ï¿½ï¿½
         st = new StringTokenizer(br.readLine());
         int require1 = Integer.parseInt(st.nextToken());
         int require2 = Integer.parseInt(st.nextToken());
 
-        // ???´ ë©”ì†Œ?“œ ?˜¸ì¶?
+        // ???ï¿½ï¿½ ë©”ì†Œ?ï¿½ï¿½ ?ï¿½ï¿½ï¿½?
         int answer = solve(require1, require2);
         bw.write(answer+ "\n");
 
@@ -71,22 +71,22 @@ public class Main_boj_1504_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
         int result2 = 0;
 
         // ê²½ë¡œ1
-        // 1 -> ?•„?ˆ˜1 ìµœë‹¨ê±°ë¦¬
+        // 1 -> ?ï¿½ï¿½?ï¿½ï¿½1 ìµœë‹¨ê±°ë¦¬
         result1 += dijkstra(1, required1);
-        // ?•„?ˆ˜1 -> ?•„?ˆ˜2 ìµœë‹¨ê±°ë¦¬
+        // ?ï¿½ï¿½?ï¿½ï¿½1 -> ?ï¿½ï¿½?ï¿½ï¿½2 ìµœë‹¨ê±°ë¦¬
         result1 += dijkstra(required1, required2);
-        // ?•„?ˆ˜2 -> n ìµœë‹¨ê±°ë¦¬
+        // ?ï¿½ï¿½?ï¿½ï¿½2 -> n ìµœë‹¨ê±°ë¦¬
         result1 += dijkstra(required2, n);
 
         //ê²½ë¡œ2
-        // 1 -> ?•„?ˆ˜2 ìµœë‹¨ê±°ë¦¬
+        // 1 -> ?ï¿½ï¿½?ï¿½ï¿½2 ìµœë‹¨ê±°ë¦¬
         result2 += dijkstra(1, required2);
-        // ?•„?ˆ˜2 -> ?•„?ˆ˜1 ìµœë‹¨ê±°ë¦¬
+        // ?ï¿½ï¿½?ï¿½ï¿½2 -> ?ï¿½ï¿½?ï¿½ï¿½1 ìµœë‹¨ê±°ë¦¬
         result2 += dijkstra(required2, required1);
-        // ?•„?ˆ˜1 -> n ìµœë‹¨ê±°ë¦¬
+        // ?ï¿½ï¿½?ï¿½ï¿½1 -> n ìµœë‹¨ê±°ë¦¬
         result2 += dijkstra(required1, n);
 
-        // ê²½ë¡œ1 && ê²½ë¡œ2 -> ê°??Š”ê¸¸ì´ ?—†?Š” ê²½ìš°
+        // ê²½ë¡œ1 && ê²½ë¡œ2 -> ï¿½??ï¿½ï¿½ê¸¸ì´ ?ï¿½ï¿½?ï¿½ï¿½ ê²½ìš°
         if(result1 >= INF && result2 >= INF) return -1;
         else return Math.min(result1, result2);
     }
@@ -110,7 +110,7 @@ public class Main_boj_1504_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
             for(int i = 0; i < list[curNode].size(); i++){
                 int nextNode = list[curNode].get(i).end;
                 int nextWeight = list[curNode].get(i).weight;
-                // ë¯¸ë°©ë¬? && ê¸°ì¡´?˜ ê³„ì‚°?œ ê±°ë¦¬ë³´ë‹¤ ?ƒˆë¡œìš´ ê±°ë¦¬ê°? ?ž‘?„ ê²½ìš°
+                // ë¯¸ë°©ï¿½? && ê¸°ì¡´?ï¿½ï¿½ ê³„ì‚°?ï¿½ï¿½ ê±°ë¦¬ë³´ë‹¤ ?ï¿½ï¿½ë¡œìš´ ê±°ë¦¬ï¿½? ?ï¿½ï¿½?ï¿½ï¿½ ê²½ìš°
                 if(check[nextNode] == false && dist[nextNode] > curWeight + nextWeight){
                     dist[nextNode] = curWeight + nextWeight;
                     queue.add(new Point(nextNode, dist[nextNode]));

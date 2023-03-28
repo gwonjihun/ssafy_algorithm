@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.io.*;
 import java.util.*;
 
-public class Main_boj_1759_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_1759_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
 
 	static int L,C;
 	static char[] a,b = {'a','e','i','o','u'};

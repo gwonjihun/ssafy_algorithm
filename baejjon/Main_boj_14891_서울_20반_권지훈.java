@@ -3,14 +3,14 @@ package gwonjihun.baejjon;
 import java.util.*;
 import java.io.*;
 
-public class Main_boj_14891_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_14891_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
 	static int[][] gear= new int[4][8];
 	public static void main(String[] args) {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 	}
 	
-	// 0?´ë©? ?šŒ? „
+	// 0?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½
 	static void rotate(Deque<Integer> a, int dir) {
 		if(dir == 0) {
 			

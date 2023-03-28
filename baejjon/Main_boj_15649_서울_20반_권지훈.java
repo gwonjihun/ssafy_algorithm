@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.util.*;
 import java.io.*;
 
-public class Main_boj_15649_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_15649_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
 
 	static int N, M;
 	static int[] result;
@@ -22,7 +22,7 @@ public class Main_boj_15649_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
 		result = new int[M];
 		v = new boolean[N];
 
-		// ?ˆœ?—´ ?•¨?ˆ˜ ?™?‘
+		// ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½
 		perm(0);
 
 		System.out.print(sb);

@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 /*
  * */
-public class Main_boj_2023_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_2023_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
 	static boolean[] v;
 	static int N;
 	public static void main(String[] args) throws Exception{
@@ -32,9 +32,9 @@ public class Main_boj_2023_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
 	static void isprime(int po) {
 		v[0]=v[1]= true;
         for(int i=2; i*i<=po-1; i++){
-        	// prime[i]ê°? ?†Œ?ˆ˜?¼ë©?
+        	// prime[i]ï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½?
             if(!v[i]){
-            	// prime[j] ?†Œ?ˆ˜ê°? ?•„?‹Œ ?‘œ?‹œ
+            	// prime[j] ?ï¿½ï¿½?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½
             	for(int j=i*i; j<=po-1; j+=i) v[j] = true;                
             }        
         }

@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.io.*;
 import java.util.*;
 
-public class Main_boj_1916_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_func {
+public class Main_boj_1916_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ_func {
 	static int[][] arr;
 	static boolean[][] use;
 	static int N;
@@ -65,7 +65,7 @@ public class Main_boj_1916_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_func {
 			
 			for(int j = 0; j<N; j++) {
 				if(!v[j] && arr[current][j] != INF && dist[j]> min + arr[current][j])
-				{//if ë¬¸ì—?„œ?Š” ?´ë¯? ë°©ë¬¸?—¬ë¶??? jë¡? ê°? ?ˆ˜ ?ˆ?Š” ? •? ?¸ì§? ?Œ?‹¨?—¬ë¶?,ìµœì†Œê°’ì¸ì§??˜ ?—¬ë¶?ë¥? ì¡°ê±´?œ¼ë£? ì£¼ì–´?•¼?•œ?‹¤.
+				{//if ë¬¸ì—?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½ï¿½? ë°©ë¬¸?ï¿½ï¿½ï¿½??? jï¿½? ï¿½? ?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½?,ìµœì†Œê°’ì¸ï¿½??ï¿½ï¿½ ?ï¿½ï¿½ï¿½?ï¿½? ì¡°ê±´?ï¿½ï¿½ï¿½? ì£¼ì–´?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½.
 					dist[j] = min + arr[current][j];
 				}
 			}

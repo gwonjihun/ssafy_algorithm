@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.util.*;
 import java.io.*;
 
-public class Main_boj_2493_?ƒ‘_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_2493_íƒ‘_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -15,7 +15,7 @@ public class Main_boj_2493_?ƒ‘_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 		for (int i = 1; i <= N; i++) {
 			int top = Integer.parseInt(st.nextToken());
-			//?—¬ê¸°ì„œ 
+			//?ï¿½ï¿½ê¸°ì„œ 
 			while (!q.isEmpty()) {
 				if (q.peekLast()[1] >= top) {
 					sb.append(q.peekLast()[0]).append(" ");

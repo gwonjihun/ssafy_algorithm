@@ -3,18 +3,18 @@ package gwonjihun.baejjon;
 import java.util.*;
 import java.io.*;
 
-class Point {
-    int x;
-    int y;
-
-    Point(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-}
-public class Main_boj_15686_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_15686_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
 
 
+	static class Point {
+		int x;
+		int y;
+		
+		Point(int x, int y) {
+			this.x = x;
+			this.y = y;
+		}
+	}
 
         static int N, M;
         static int[][] map;
@@ -35,7 +35,7 @@ public class Main_boj_15686_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
             person = new ArrayList<>();
             chicken = new ArrayList<>();
 
-            // ë¯¸ë¦¬ ì§‘ê³¼ ì¹˜í‚¨ì§‘ì— ?•´?‹¹?•˜?Š” ì¢Œí‘œë¥? ArrayList?— ?„£?–´ ?‘ .
+            // ë¯¸ë¦¬ ì§‘ê³¼ ì¹˜í‚¨ì§‘ì— ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ì¢Œí‘œï¿½? ArrayList?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½.
             for (int i = 0; i < N; i++) {
                 st = new StringTokenizer(br.readLine());
                 for (int j = 0; j < N; j++) {
@@ -66,8 +66,8 @@ public class Main_boj_15686_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
                 for (int i = 0; i < person.size(); i++) {
                     int temp = Integer.MAX_VALUE;
 
-                    // ?–´?–¤ ì§‘ê³¼ ì¹˜í‚¨ì§? ì¤? open?•œ ì¹˜í‚¨ì§‘ì˜ ëª¨ë“  ê±°ë¦¬ë¥? ë¹„êµ?•œ?‹¤.
-                    // ê·? ì¤?, ìµœì†Œ ê±°ë¦¬ë¥? êµ¬í•œ?‹¤.
+                    // ?ï¿½ï¿½?ï¿½ï¿½ ì§‘ê³¼ ì¹˜í‚¨ï¿½? ï¿½? open?ï¿½ï¿½ ì¹˜í‚¨ì§‘ì˜ ëª¨ë“  ê±°ë¦¬ï¿½? ë¹„êµ?ï¿½ï¿½?ï¿½ï¿½.
+                    // ï¿½? ï¿½?, ìµœì†Œ ê±°ë¦¬ï¿½? êµ¬í•œ?ï¿½ï¿½.
                     for (int j = 0; j < chicken.size(); j++) {
                         if (open[j]) {
                             int distance = Math.abs(person.get(i).x - chicken.get(j).x)
@@ -82,7 +82,7 @@ public class Main_boj_15686_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
                 return;
             }
 
-            // ë°±íŠ¸?˜?‚¹
+            // ë°±íŠ¸?ï¿½ï¿½?ï¿½ï¿½
             for (int i = start; i < chicken.size(); i++) {
                 open[i] = true;
                 DFS(i + 1, cnt + 1);

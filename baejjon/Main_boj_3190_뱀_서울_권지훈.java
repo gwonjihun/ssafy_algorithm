@@ -3,11 +3,11 @@ package gwonjihun.baejjon;
 import java.io.*;
 import java.util.*;
 
-public class Main_boj_3190_ë±?_?„œ?š¸_ê¶Œì??›ˆ {
+public class Main_boj_3190_ë±€_ì„œìš¸_ê¶Œì§€í›ˆ {
 	static Deque<int[]> snake;
 	static int[][] map;
 	static int[] dx = { 0, -1, 0, 1 }, dy = { 1, 0, -1, 0 };
-	// ?‹œê³„ë°©?–¥ d+3%4 ë°˜ì‹œê³? ë°©í–¥ d+1%4
+	// ?ï¿½ï¿½ê³„ë°©?ï¿½ï¿½ d+3%4 ë°˜ì‹œï¿½? ë°©í–¥ d+1%4
 	static int n, k, l;
 	static Deque<Command> coms;
 
@@ -59,7 +59,7 @@ public class Main_boj_3190_ë±?_?„œ?š¸_ê¶Œì??›ˆ {
 			int y = xyd[1] + dy[dir];
 
 			
-			if (0 > x || x >= n || 0 > y || y >= n) { // ë²½ì¶©?Œ
+			if (0 > x || x >= n || 0 > y || y >= n) { // ë²½ì¶©?ï¿½ï¿½
 				break;
 			}
 			boolean flag = false;
@@ -73,7 +73,7 @@ public class Main_boj_3190_ë±?_?„œ?š¸_ê¶Œì??›ˆ {
 
 			if (map[x][y] != 1) {
 				snake.pollFirst();
-			} else {// ?—¬ê¸°ì„œ?Š” ?‚¬ê³¼ë?? ë¨¹ìŒ
+			} else {// ?ï¿½ï¿½ê¸°ì„œ?ï¿½ï¿½ ?ï¿½ï¿½ê³¼ï¿½?? ë¨¹ìŒ
 				map[x][y] = 0;
 			}
 

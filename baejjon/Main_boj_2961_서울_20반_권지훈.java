@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Main_boj_2961_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_2961_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ  {
 	static int[][] arr;
 	static boolean[] v;
 	static int N;
@@ -44,7 +44,7 @@ public class Main_boj_2961_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
 
 			return;
 		}
-		// ì¤‘ë³µ ë¶ˆê??•¼
+		// ì¤‘ë³µ ë¶ˆï¿½??ï¿½ï¿½
 		v[cnt] = true;
 		comb(cnt + 1);
 		v[cnt] = false;

@@ -1,7 +1,7 @@
 package gwonjihun.baejjon;
 import java.util.*;
 import java.io.*;
-public class Main_boj_1244_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_1244_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
 	static int N;
 	static int[] arr;
 	static int T;
@@ -30,11 +30,11 @@ public class Main_boj_1244_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
 			}
 		}
 		for(int i=0;i<T;i++) {
-			// ifë¬? ?‚¨?—¬ êµ¬ë¶„
+			// ifï¿½? ?ï¿½ï¿½?ï¿½ï¿½ êµ¬ë¶„
 			if(menu[i][0]==1) {
 				int temp=1 ;
-				//1~8ë²ˆìœ¼ë¡? ê³„ì‚°?–ˆ?„
-				//1~8ë²ˆìœ¼ë¡? ê³„ì‚°?–ˆê¸? ?•Œë¬¸ì— 
+				//1~8ë²ˆìœ¼ï¿½? ê³„ì‚°?ï¿½ï¿½?ï¿½ï¿½
+				//1~8ë²ˆìœ¼ï¿½? ê³„ì‚°?ï¿½ï¿½ï¿½? ?ï¿½ï¿½ë¬¸ì— 
 				while(menu[i][1]*temp <= N) { 
 					arr[menu[i][1]*temp-1] = arr[menu[i][1]*temp-1]==0 ? 1: 0;
 					temp++;

@@ -3,17 +3,17 @@ package gwonjihun.baejjon;
 import java.util.*;
 import java.io.*;
 
-public class Main_boj_16234_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_ë³µìŠµ {
+public class Main_boj_16234_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ_ë³µìŠµ {
 	static int[][] arr ;
 	static int[] dx = {0,0,1,-1},dy = {1,-1,0,0};
 	static boolean[][] v;
-	static int N, L, R, cnt_n, sum_p; //cnt_n -> sum_pê°? ?•„?š”?•œ ?´?œ ?Š” ?
+	static int N, L, R, cnt_n, sum_p; //cnt_n -> sum_pï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?
 	
-	static List<int[]> li; // ?‰ê· ê°’ ?„£?–´ì¤˜ì•¼?•˜?Š” ?…¸?“œ?“¤ ë¦¬ìŠ¤?Š¸
+	static List<int[]> li; // ?ï¿½ï¿½ê· ê°’ ?ï¿½ï¿½?ï¿½ï¿½ì¤˜ì•¼?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ë¦¬ìŠ¤?ï¿½ï¿½
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		/* 1. ë¨¼ì? ê³µìœ ?„ ?´ ê°??Š¥?•œì§?ë¥? bfsë¡? ?ƒ?ƒ‰?•œë©? arraylist?— ???¥ x,y,cntë¥? ???¥?•œ?‹¤
-		 * 2. ?•©ì³ì„œ 
+		/* 1. ë¨¼ï¿½? ê³µìœ ?ï¿½ï¿½?ï¿½ï¿½ ï¿½??ï¿½ï¿½?ï¿½ï¿½ï¿½?ï¿½? bfsï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½? arraylist?ï¿½ï¿½ ???ï¿½ï¿½ x,y,cntï¿½? ???ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
+		 * 2. ?ï¿½ï¿½ì³ì„œ 
 		 * */
 		
 		StringTokenizer st = new StringTokenizer(br.readLine()," ");
@@ -35,14 +35,14 @@ public class Main_boj_16234_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_ë³µìŠµ {
 			v = new boolean[N][N];
 			for(int i = 0 ;i<N;i++) {
 				for(int j= 0 ; j<N ; j++) {
-					if(v[i][j]) continue; // ?´ë¯? ë°©ë¬¸?˜?–´ ?ˆ?œ¼ë©?  -> ?—¬ê¸°ì„œ ë¬¸ì œ ?—†ê³?
+					if(v[i][j]) continue; // ?ï¿½ï¿½ï¿½? ë°©ë¬¸?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ï¿½?  -> ?ï¿½ï¿½ê¸°ì„œ ë¬¸ì œ ?ï¿½ï¿½ï¿½?
 					li = new ArrayList<>();
-					int sum = bfs(i,j);// ?˜ˆë¥¼ë“¤?–´ ?‘˜?˜ ì°¨ì´?¼ 20?¸?° ?•˜?‚˜ê°? 20?´ê³? ?•˜?‚˜ê°? 0?´ë©?? -> 10?´?˜ë²„ë¦¬ë©??
+					int sum = bfs(i,j);// ?ï¿½ï¿½ë¥¼ë“¤?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ ì°¨ì´?ï¿½ï¿½ 20?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ï¿½? 20?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½ï¿½? 0?ï¿½ï¿½ï¿½?? -> 10?ï¿½ï¿½?ï¿½ï¿½ë²„ë¦¬ï¿½??
 					//
 //					if(sum/li.size() != arr[i][j]) { //
 //					if(sum != arr[i][j]) { // -> // 
-					if(li.size()>1) { // ->? •?‹µ
-						//?´ê±°ë¡œ ?‚˜?ˆ„ë©? ?•ˆ?˜?Š” ?´?œ ?Š” -> 1. 0 
+					if(li.size()>1) { // ->?ï¿½ï¿½?ï¿½ï¿½
+						//?ï¿½ï¿½ê±°ë¡œ ?ï¿½ï¿½?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ -> 1. 0 
 						flag= true;
 						change(sum);
 					}
@@ -84,7 +84,7 @@ public class Main_boj_16234_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_ë³µìŠµ {
 	}
 	
 	static void change(int sum) {
-		if(li.size()==0) return;// ?•ˆ? „?¥ì¹? 1
+		if(li.size()==0) return;// ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½? 1
 		int avg = sum/li.size();
 		for(int[] a : li) {
 			arr[a[0]][a[1]] = avg;

@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class main_bj_15652_?„œ?š¸_20_ê¶Œì??›ˆ {
+public class main_bj_15652_ì„œìš¸_20_ê¶Œì§€í›ˆ {
 	static int n,r;
 	static int[] result;
 //	static boolean[] v;
@@ -32,10 +32,10 @@ public class main_bj_15652_?„œ?š¸_20_ê¶Œì??›ˆ {
 //			v[i]=true;
 			result[cnt] =i+1;
 			percomb(cnt+1,i);// ì¡°í•©
-//			percomb(cnt+1,0);// ?ˆœ?—´
-//			percomb(cnt+1,i);// ì¤‘ë³µ?—ˆ?š©ì¡°í•©
+//			percomb(cnt+1,0);// ?ï¿½ï¿½?ï¿½ï¿½
+//			percomb(cnt+1,i);// ì¤‘ë³µ?ï¿½ï¿½?ï¿½ï¿½ì¡°í•©
 //			v[i]=false;
-//			comb(cnt+1,i); -> ?´ê±? ì¤‘ë³µì¡°í•©
+//			comb(cnt+1,i); -> ?ï¿½ï¿½ï¿½? ì¤‘ë³µì¡°í•©
 		}
 	}
 }

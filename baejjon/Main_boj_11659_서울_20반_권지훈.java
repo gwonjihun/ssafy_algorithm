@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main_boj_11659_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_11659_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
 	public static void main(String[] args) throws Exception{
 		StringBuilder sb = new StringBuilder();
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

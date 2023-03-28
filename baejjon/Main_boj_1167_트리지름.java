@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.util.*;
 import java.io.*;
 
-public class Main_boj_1167_?Š¸ë¦¬ì?ë¦? {
+public class Main_boj_1167_íŠ¸ë¦¬ì§€ë¦„ {
 	static class Node {
 		int x;
 		int weight;
@@ -33,7 +33,7 @@ public class Main_boj_1167_?Š¸ë¦¬ì?ë¦? {
 				graph[parent].add(new Node(next, wegiht));
 			}
 		}
-		// ?—¬ê¸°ì„œ ?…¸?“œë¥? ë§Œë“¤?–´ ?†¨?–´ ê·¸ëŸ¬ë©? ?´? œë¶??„° dfsë¥? ?†µ?•´?„œ 0ë¶??„° 5?—?„œê°ˆìˆ˜ ?ˆ?Š” ëª¨ë“  ?…¸?“œ?“¤?„ ?™•?¸?•œ?‹¤.
+		// ?ï¿½ï¿½ê¸°ì„œ ?ï¿½ï¿½?ï¿½ï¿½ï¿½? ë§Œë“¤?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ ê·¸ëŸ¬ï¿½? ?ï¿½ï¿½?ï¿½ï¿½ï¿½??ï¿½ï¿½ dfsï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ 0ï¿½??ï¿½ï¿½ 5?ï¿½ï¿½?ï¿½ï¿½ê°ˆìˆ˜ ?ï¿½ï¿½?ï¿½ï¿½ ëª¨ë“  ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½.
 		dfs(4,0, 0);
 		dfs(Max_node,0, 0);
 		System.out.println(Min_answer);
@@ -49,7 +49,7 @@ public class Main_boj_1167_?Š¸ë¦¬ì?ë¦? {
 
 			Node n_node = graph[nextnode].get(i);
 			if (prnode == n_node.x) {continue;}
-				//ë°©ë¬¸ ì²˜ë¦¬ë¡? ?Š¸ë¦¬ì˜ ë°©ë¬¸ ?‚¬?´?´ ?˜•?„±?„ ë§‰ëŠ”?‹¤.
+				//ë°©ë¬¸ ì²˜ë¦¬ï¿½? ?ï¿½ï¿½ë¦¬ì˜ ë°©ë¬¸ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ë§‰ëŠ”?ï¿½ï¿½.
 				dfs(n_node.x,nextnode, weight + n_node.weight);
 
 		}

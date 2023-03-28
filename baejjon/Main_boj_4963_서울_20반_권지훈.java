@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.io.*;
 import java.util.*;
 
-public class Main_boj_4963_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_4963_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
 	static int w, h;
 	static int[][] arr;
 	static int[] dx = { 1, 1, 1, -1, -1, -1, 0, 0 }, dy = { -1, 0, 1, -1, 0, 1, -1, 1 };

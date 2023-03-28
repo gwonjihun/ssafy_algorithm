@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.io.*;
 import java.util.*;
 
-public class main_bj_14503_로봇�??���?청소기_?��?��_20�?_권�??�� {
+public class main_bj_14503_로봇청소기_서울_20반_권지훈{
 	static int[][] map;	
 	static int[] dx = {-1,0,1,0};
 	static int[] dy = {0,1,0,-1};

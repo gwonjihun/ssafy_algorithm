@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Main_boj_9663_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_9663_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ{
 	static int[] dx = { -1, -1, -1, 0, 1, 1, 1, 0 }, dy = { -1, 0, 1, 1, 1, 0, -1, -1 };
 	static int[][] arr;
 	static int N,result=0;
@@ -11,19 +11,19 @@ public class Main_boj_9663_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		N = Integer.parseInt(br.readLine());
 		arr = new int[N][N];
-		// ì²´ìŠ¤ ê°??ˆ˜
+		// ì²´ìŠ¤ ï¿½??ï¿½ï¿½
 		dfs(0);
 		System.out.println(result);
 	}
 
-	// che -> ì²´ìŠ¤ ê°??ˆ˜
-	// cnt -> 8ê°œê? ? „ë¶??‹¤ ë¬¸ì œ ?—†?´ ?•´ê²°ëœ ê²½ìš°
+	// che -> ì²´ìŠ¤ ï¿½??ï¿½ï¿½
+	// cnt -> 8ê°œï¿½? ?ï¿½ï¿½ï¿½??ï¿½ï¿½ ë¬¸ì œ ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½ê²°ëœ ê²½ìš°
 	static void dfs(int cnt) {
 		if(cnt==N) {
 			result++;
 			return;
 		}
-		// cnt?–‰?—?„œ ê°??Š¥?•œ ?—´?„ ì°¾ì•„ì¤??‹¤?Š” ê±°ë‹Œê¹?.
+		//ì‹œë°œ
 		for(int i = 0 ; i<N;i++) {
 			if(arr[cnt][i]!= 0 ) continue;
 			arr[cnt][i]= cnt+1;
@@ -43,7 +43,6 @@ public class Main_boj_9663_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
 			
 			dfs(cnt+1);
 			arr[cnt][i] = 0;
-			//?´? œ ?—¬ê¸°ì„œ ê¸°ì¡´?— ?–ˆ?˜ ê²ƒë“¤?„ ë¹¼ì¤˜?•¼?•´
 			for(int x=cnt; x<N;x++) {
 				for(int y = 0 ; y<N;y++) {
 					if(arr[x][y]==cnt+1) {

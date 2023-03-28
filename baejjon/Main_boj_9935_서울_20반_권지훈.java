@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.io.*;
 import java.util.*;
 
-public class Main_boj_9935_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_9935_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
 
 	
 	

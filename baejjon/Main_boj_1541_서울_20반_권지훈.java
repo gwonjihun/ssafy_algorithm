@@ -3,13 +3,13 @@ package gwonjihun.baejjon;
 import java.io.*;
 import java.util.*;
 
-public class Main_boj_1541_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_1541_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
 	
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		//StringTokenizer st;
 
-		String[] cal = br.readLine().split("-"); // ë¹¼ê¸°ë¥? ê¸°ì??œ¼ë¡? ë¶„ë¦¬
+		String[] cal = br.readLine().split("-"); // ë¹¼ê¸°ï¿½? ê¸°ï¿½??ï¿½ï¿½ï¿½? ë¶„ë¦¬
 		int res = 0;
 		for(int i=0;i<cal.length;i++) {
 			int sum = 0;

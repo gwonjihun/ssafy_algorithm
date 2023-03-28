@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class Main_boj_2798_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_2798_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -24,8 +24,8 @@ public class Main_boj_2798_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
 			}
 		}
 		int result = 0;
-		// input*(input-1)*(input-2) = O(n^3) arr.length?˜ ìµœë? ê¸¸ì´?Š” 100 O(100^3)
-		// ?”°?¼?„œ 3ì¤? forë¬¸ì„ ?´?š©?•´?„ ì£¼ì–´ì§? ?‹œê°? ?‚´?— ?™?‘ ê°??Š¥.
+		// input*(input-1)*(input-2) = O(n^3) arr.length?ï¿½ï¿½ ìµœï¿½? ê¸¸ì´?ï¿½ï¿½ 100 O(100^3)
+		// ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ 3ï¿½? forë¬¸ì„ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ì£¼ì–´ï¿½? ?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ ï¿½??ï¿½ï¿½.
 		end: for (int i = 0; i < N - 2; i++) {
 			for (int j = i + 1; j < N - 1; j++) {
 				for (int k = j + 1; k < N; k++) {

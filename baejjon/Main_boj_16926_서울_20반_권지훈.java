@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.util.*;
 import java.io.*;
 
-public class Main_boj_16926_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
+public class Main_boj_16926_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
@@ -19,11 +19,11 @@ public class Main_boj_16926_?„œ?š¸_20ë°?_ê¶Œì??›ˆ {
 			}
 		}
 		
-		int count = Math.min(h, w) / 2; //?Œ?•„ê°??Š” ?¼?¸??˜ ?ˆ˜
-		for(int i=0; i<n; i++) { //?šŒ? „ ?šŸ?ˆ˜ë§Œí¼ ë°˜ë³µ
+		int count = Math.min(h, w) / 2; //?ï¿½ï¿½?ï¿½ï¿½ï¿½??ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½??ï¿½ï¿½ ?ï¿½ï¿½
+		for(int i=0; i<n; i++) { //?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ë§Œí¼ ë°˜ë³µ
 			
-			for(int j=0; j<count; j++) { //?¼?¸?“¤ ? „ë¶? ?Œë¦¬ê¸°
-				int temp = arr[j][j]; //ë§? ë§ˆì?ë§‰ì— ?„£ê¸? ?œ„?•´ ?”°ë¡? ???¥!!!!ë°°ì—´?—?„œ ?›?†Œ ?œ„ì¹? ë°”ê??•Œ ?•˜?‚˜ë¥? temp?— ???¥?•´?‘?Š”ê±°ë‘ ê°™ì? ?›ë¦?
+			for(int j=0; j<count; j++) { //?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½ï¿½? ?ï¿½ï¿½ë¦¬ê¸°
+				int temp = arr[j][j]; //ï¿½? ë§ˆï¿½?ë§‰ì— ?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½ï¿½? ???ï¿½ï¿½!!!!ë°°ì—´?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½ï¿½? ë°”ï¿½??ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ï¿½? temp?ï¿½ï¿½ ???ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ê±°ë‘ ê°™ï¿½? ?ï¿½ï¿½ï¿½?
 				
 				for(int k=j+1; k<w-j; k++)
 					arr[j][k-1] = arr[j][k];

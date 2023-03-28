@@ -4,7 +4,7 @@ package gwonjihun.baejjon;
 import java.io.*;
 import java.util.*;
 
-public class main_bj_17070_?ŒŒ?´?”„?˜®ê¸°ê¸°1_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_sol {
+public class main_bj_17070_íŒŒì´í”„ì˜®ê¸°ê¸°1_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ_sol {
 	static int[][] arr;
 	static int cnt = 0;
 	static int N;

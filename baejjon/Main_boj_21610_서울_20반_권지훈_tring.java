@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.io.*;
 import java.util.*;
 
-public class Main_boj_21610_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_tring {
+public class Main_boj_21610_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ_tring {
 	static class cloud {
 		int x;
 		int y;
@@ -14,15 +14,15 @@ public class Main_boj_21610_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_tring {
 			this.x = x;
 			this.y = y;
 			this.d = d;// ë°©í–¥
-			this.s = s;// ?†?„
+			this.s = s;// ?ï¿½ï¿½?ï¿½ï¿½
 		}
 	}
 
 	static int[] dx = { 0, 0, -1, -1, -1, 0, 1, 1, 1 }, dy = { 0, -1, -1, 0, 1, 1, 1, 0, -1 };
 	static int[] check = { 2, 4, 6, 8 };
 	static int[][] cmd, map;
-	static boolean[][] v; // ?•´?‹¹ ?‹œê°„ì— ?‚´? ¤?˜¨ ?œ„ì¹?
-	static Deque<cloud> q; // ?´ê±¸ë¡œ ë°˜ë³µ?•´ë²„ë¦¬ë©´ë˜?‹Œê¹?.
+	static boolean[][] v; // ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½ê°„ì— ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½ï¿½?
+	static Deque<cloud> q; // ?ï¿½ï¿½ê±¸ë¡œ ë°˜ë³µ?ï¿½ï¿½ë²„ë¦¬ë©´ë˜?ï¿½ï¿½ï¿½?.
 	static int N, M;
 
 	public static void main(String[] args) throws Exception {
@@ -32,7 +32,7 @@ public class Main_boj_21610_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_tring {
 		M = Integer.parseInt(st.nextToken());
 		map = new int[N][N];
 		v = new boolean[N][N];
-		cmd = new int[M][2]; // 0??ë°©í–¥ 1???†?„
+		cmd = new int[M][2]; // 0??ë°©í–¥ 1???ï¿½ï¿½?ï¿½ï¿½
 		q = new ArrayDeque<cloud>();
 		for (int i = 0; i < N; i++) {
 			st = new StringTokenizer(br.readLine(), " ");
@@ -46,15 +46,15 @@ public class Main_boj_21610_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_tring {
 			cmd[i][0] = Integer.parseInt(st.nextToken());
 			// ë°©í–¥
 			cmd[i][1] = Integer.parseInt(st.nextToken());
-			// ?†?„
+			// ?ï¿½ï¿½?ï¿½ï¿½
 		}
 		q.addLast(new cloud(N - 1, 0, cmd[0][0], cmd[0][1]));
 		q.addLast(new cloud(N - 2, 0, cmd[0][0], cmd[0][1]));
 		q.addLast(new cloud(N - 1, 1, cmd[0][0], cmd[0][1]));
 		q.addLast(new cloud(N - 2, 1, cmd[0][0], cmd[0][1]));
-		// ?—¬ê¸°ì„œ êµ¬ë¦„?„ ?„ ?ƒ?–ˆê³??
-		// ?—¬ê¸°ì„œë¶??„°
-		// ì´ˆê¸° êµ¬ë¦„ ?…? ¥
+		// ?ï¿½ï¿½ê¸°ì„œ êµ¬ë¦„?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½??
+		// ?ï¿½ï¿½ê¸°ì„œï¿½??ï¿½ï¿½
+		// ì´ˆê¸° êµ¬ë¦„ ?ï¿½ï¿½?ï¿½ï¿½
 		while (!q.isEmpty()) {
 			cloud cur = q.poll();
 			int nx = (N + cur.x + dx[cur.d] * (cur.s % N)) % N;
@@ -64,8 +64,8 @@ public class Main_boj_21610_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_tring {
 			map[nx][ny] += 1;
 			v[nx][ny] = true;
 
-		} // ?—¬ê¸°ì„œ ë¹„ë‚´ë¦¬ê³ 
-			// ì´ˆê¸° êµ¬ë¦„ ë¹„ê? ?‚¼
+		} // ?ï¿½ï¿½ê¸°ì„œ ë¹„ë‚´ë¦¬ê³ 
+			// ì´ˆê¸° êµ¬ë¦„ ë¹„ï¿½? ?ï¿½ï¿½
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < N; j++) {
 				if (v[i][j]) {
@@ -79,8 +79,8 @@ public class Main_boj_21610_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_tring {
 					}
 				}
 			}
-		} // ë¬¼ë³µ?‚¬
-		//?—¬ê¸°ê¹Œì§??Š” ?™„ë²½í•´
+		} // ë¬¼ë³µ?ï¿½ï¿½
+		//?ï¿½ï¿½ê¸°ê¹Œï¿½??ï¿½ï¿½ ?ï¿½ï¿½ë²½í•´
 		
 		
 		for (int[] a : map) {
@@ -90,7 +90,7 @@ public class Main_boj_21610_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_tring {
 		
 		
 		for (int Time = 1; Time <= M; Time++) {
-			// ë¬¼ë³µ?‚¬ ë²„ê·¸ê°? ë¯¸êµ¬?˜„?˜?–´?ˆ?Œ.
+			// ë¬¼ë³µ?ï¿½ï¿½ ë²„ê·¸ï¿½? ë¯¸êµ¬?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½.
 			
 			for (int i = 0; i < N; i++) {
 				for (int j = 0; j < N; j++) {
@@ -100,7 +100,7 @@ public class Main_boj_21610_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_tring {
 						if(Time!=M) q.add(new cloud(i, j, cmd[Time][0], cmd[Time][1]));
 					}
 				}
-			} // ?—¬ê¸°ì„œ ë¹„ë‚´ë¦¬ê³ 
+			} // ?ï¿½ï¿½ê¸°ì„œ ë¹„ë‚´ë¦¬ê³ 
 			if(Time==M) break;
 			for (int i = 0; i < N; i++) {
 				for (int j = 0; j < N; j++) {
@@ -115,7 +115,7 @@ public class Main_boj_21610_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_tring {
 						}
 					}
 				}
-			} // ë¬¼ë³µ?‚¬
+			} // ë¬¼ë³µ?ï¿½ï¿½
 			v = new boolean[N][N];
 			System.out.println(q.size());
 			while (!q.isEmpty()) {
@@ -131,12 +131,12 @@ public class Main_boj_21610_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_tring {
 
 			System.out.println("---------");
 
-			// êµ¬ë¦„?„ ??ì§ì¸?’¤
-			// ë¹„ë?? ?‚´ë¦¬ê³  ë¹„ê? ?˜¨ ê³³ì„ ?™•?¸?•œ?‹¤.-> booleanë°°ì—´ ì´ˆê¸°?™” ?›„?— ì§„í–‰
+			// êµ¬ë¦„?ï¿½ï¿½ ??ì§ì¸?ï¿½ï¿½
+			// ë¹„ï¿½?? ?ï¿½ï¿½ë¦¬ê³  ë¹„ï¿½? ?ï¿½ï¿½ ê³³ì„ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½.-> booleanë°°ì—´ ì´ˆê¸°?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ ì§„í–‰
 		}
 		for(int[] a: map) {
 			System.out.println(Arrays.toString(a));
-		}System.out.println("------ìµœì¢… êµ¬ë¦„ ?ƒ?ƒœ");
+		}System.out.println("------ìµœì¢… êµ¬ë¦„ ?ï¿½ï¿½?ï¿½ï¿½");
 		int cnt = 0;
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < N; j++) {

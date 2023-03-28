@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.io.*;
 import java.util.*;
 
-public class Main_boj_10026_?„œ?š¸_20ë°?_ê¶Œì??›ˆ_bfs {
+public class Main_boj_10026_ì„œìš¸_20ë°˜_ê¶Œì§€í›ˆ_bfs {
 	static char[][] map;
 	static int[] dx = {0,0,1,-1}, dy = {1,-1,0,0};
 	static int cnt=0, cnt_j=0, N;

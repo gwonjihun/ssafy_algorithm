@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.io.*;
 import java.util.*;
 
-public class Main_boj_21610_?„œ?š¸ {
+public class Main_boj_21610_ì„œìš¸ {
     static class cloud{
         int x;
         int y;
@@ -13,13 +13,13 @@ public class Main_boj_21610_?„œ?š¸ {
         }
     }
     static int[] dx = {0,0,-1,-1,-1,0,1,1,1} , dy = {0,-1,-1,0,1,1,1,0,-1};
-    // ??ê°ì„  ì²´í¬?‹œ 2?˜ ë°°ìˆ˜ë§? ì²´í¬?•œ?‹¤.
+    // ??ê°ì„  ì²´í¬?ï¿½ï¿½ 2?ï¿½ï¿½ ë°°ìˆ˜ï¿½? ì²´í¬?ï¿½ï¿½?ï¿½ï¿½.
     static int[][] map;
-    static boolean[][] v; // êµ¬ë¦„?´ ?‚´? ¤?˜¨ ì§??—­ ì²´í¬
-    static int N, M ; // N?? ì§??„?˜ ?¬ê¸? M?? ëª…ë ¹?˜ ê°??ˆ˜
-    static Deque<cloud> q; // êµ¬ë¦„ ???¥ ê³µê°„
+    static boolean[][] v; // êµ¬ë¦„?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ï¿½??ï¿½ï¿½ ì²´í¬
+    static int N, M ; // N?? ï¿½??ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½ï¿½? M?? ëª…ë ¹?ï¿½ï¿½ ï¿½??ï¿½ï¿½
+    static Deque<cloud> q; // êµ¬ë¦„ ???ï¿½ï¿½ ê³µê°„
 
-    static Deque<int[]> copymagic; // êµ¬ë¦„ ???¥ ê³µê°„
+    static Deque<int[]> copymagic; // êµ¬ë¦„ ???ï¿½ï¿½ ê³µê°„
     static int[][] cmds;
 
     public static void main(String[] args) throws Exception {
@@ -35,26 +35,26 @@ public class Main_boj_21610_?„œ?š¸ {
 
         M = Integer.parseInt(st.nextToken());
 
-        cmds = new int[M][2]; // 0?? ë°©í–¥ 1?? ?´?™ ê±°ë¦¬
+        cmds = new int[M][2]; // 0?? ë°©í–¥ 1?? ?ï¿½ï¿½?ï¿½ï¿½ ê±°ë¦¬
 
         for(int i = 0 ; i < N ; i++){
             st = new StringTokenizer(br.readLine()," ");
             for(int j = 0 ; j < N ; j++) {
                 map[i][j] = Integer.parseInt(st.nextToken());
             }
-        } // ë°”êµ¬?‹ˆ ì´ˆê¸° ?°?´?„° ?…? ¥
+        } // ë°”êµ¬?ï¿½ï¿½ ì´ˆê¸° ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½
 
         for(int i = 0 ; i < M ; i++){
             st = new StringTokenizer(br.readLine()," ");
             cmds[i][0] = Integer.parseInt(st.nextToken());
             cmds[i][1] = Integer.parseInt(st.nextToken());
-        }//ëª…ë ¹?–´?“¤ ë³µì‚¬
+        }//ëª…ë ¹?ï¿½ï¿½?ï¿½ï¿½ ë³µì‚¬
 
         q.addLast(new cloud(N-1,0));
         q.addLast(new cloud(N-1,1));
         q.addLast(new cloud(N-2,0));
         q.addLast(new cloud(N-2,1));
-        // ì´ˆê¸° êµ¬ë¦„ ?…? ¥
+        // ì´ˆê¸° êµ¬ë¦„ ?ï¿½ï¿½?ï¿½ï¿½
         for(int m = 0 ; m < M ; m++){
             while(!q.isEmpty()){
                 cloud cur = q.pollFirst();
@@ -68,7 +68,7 @@ public class Main_boj_21610_?„œ?š¸ {
 //            for(int[] a : map){
 //                System.out.println(Arrays.toString(a));
 //            }
-//            System.out.println("---------ë¹„ë‚´ë¦¬ê¸° ?‹¨ê³? ?---------");
+//            System.out.println("---------ë¹„ë‚´ë¦¬ê¸° ?ï¿½ï¿½ï¿½? ?ï¿½ï¿½---------");
             while(!copymagic.isEmpty()){
                 int[] cur = copymagic.pollLast();
                 for(int i= 2;i<=8;i+=2){
@@ -82,8 +82,8 @@ public class Main_boj_21610_?„œ?š¸ {
 //            for(int[] a : map){
 //                System.out.println(Arrays.toString(a));
 //            }
-//            System.out.println("---------ë¬¼ë³µ?‚¬ ?---------");
-//            System.out.print("?„ ?ƒ ?œ êµ¬ë¦„ ë¦¬ìŠ¤?Š¸ : ");
+//            System.out.println("---------ë¬¼ë³µ?ï¿½ï¿½ ?ï¿½ï¿½---------");
+//            System.out.print("?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½ êµ¬ë¦„ ë¦¬ìŠ¤?ï¿½ï¿½ : ");
 
             for(int i = 0 ; i<N ; i++){
                 for(int j = 0 ; j < N ; j++){
@@ -98,7 +98,7 @@ public class Main_boj_21610_?„œ?š¸ {
 //            for(int[] a : map){
 //                System.out.println(Arrays.toString(a));
 //            }
-//            System.out.println("---------aë§ˆì?ë§? ?‹¨ê³? ?---------");
+//            System.out.println("---------aë§ˆï¿½?ï¿½? ?ï¿½ï¿½ï¿½? ?ï¿½ï¿½---------");
             v= new boolean[N][N];
         }
 //        for(int[] a : map){

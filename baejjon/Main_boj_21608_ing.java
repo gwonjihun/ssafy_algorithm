@@ -3,8 +3,8 @@ package gwonjihun.baejjon;
 import java.io.*;
 import java.util.*;
 
-public class Main_boj_21608_?„œ?š¸ {
-	static int[][] map; // ?•™?ƒ?´ ?•‰?Š” ì§??„
+public class Main_boj_21608_ing {
+	static int[][] map; // ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ ï¿½??ï¿½ï¿½
 	static int[] dx = {0,0,1,-1}, dy = {1,-1,0,0};
 	static int N;
 	static int[][] student;
@@ -23,7 +23,7 @@ public class Main_boj_21608_?„œ?š¸ {
 			student[i] = new int[] {num,num1,num2,num3,num4};
 		}
 		for(int i = 0;i < N*N;i++) {
-			//?—¬ê¸°ì„œ ?´? œ studentë°°ì—´?— ???•´?„œ ì§„í–‰?•˜?Š”
+			//?ï¿½ï¿½ê¸°ì„œ ?ï¿½ï¿½?ï¿½ï¿½ studentë°°ì—´?ï¿½ï¿½ ???ï¿½ï¿½?ï¿½ï¿½ ì§„í–‰?ï¿½ï¿½?ï¿½ï¿½
 //			if()
 		}
 		
