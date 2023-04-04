@@ -13,7 +13,7 @@ public class Solution_D0_1953_서울_20반_권지훈 {
 	// 파이프 모형별 데이터 입력
 	static int[][] pipe = { {}, { 0, 1, 2, 3 }, { 0, 1 }, { 2, 3 }, { 0, 2 }, { 1, 2 }, { 3, 1 }, { 3, 0 } };
 
-	static int[][] map, arr;
+	static int[][] map; 
 	static boolean[][] v;
 	static int N, M, time, goal, cnt;
 
@@ -35,7 +35,6 @@ public class Solution_D0_1953_서울_20반_권지훈 {
 			cnt = 0;
 
 			map = new int[N][M];
-			arr = new int[N][M];
 			v = new boolean[N][M];
 
 			// 하수도 지도 초기 데이터 입력
@@ -45,9 +44,7 @@ public class Solution_D0_1953_서울_20반_권지훈 {
 					map[i][j] = Integer.parseInt(st.nextToken());
 				}
 			}
-
 			bfs(Sx, Sy);
-
 			sb.append("#").append(T).append(" ").append(cnt).append("\n");
 		}
 		System.out.println(sb);
@@ -57,33 +54,29 @@ public class Solution_D0_1953_서울_20반_권지훈 {
 		Deque<int[]> q = new ArrayDeque<>();
 		q.add(new int[] { x, y, time });
 		v[x][y] = true;
-		arr[x][y] = 1;
 		cnt++;
 		while (!q.isEmpty()) {
 			int[] xy = q.poll();
 			int[] dir = pipe[map[xy[0]][xy[1]]];
 			for (int d : dir) {
+				// 
 				int nx = xy[0] + dx[d];
 				int ny = xy[1] + dy[d];
+				// x,y의 파이프 모양에 따른 이동 가능 지역.
 				if (0 <= nx && nx < N && 0 <= ny && ny < M && map[nx][ny] != 0 && !v[nx][ny]) {
-					// 여기서 파이프로 격자에서 이동 가능한 곳을 카운트함
 
 					int[] tmp = pipe[map[nx][ny]];
-
-
+					
+					// nx,ny에 있는 파이프가 기존 x,y파이프와 연결되어있는지 유무 확인
 					for (int s : tmp) {
 
 						if ((nx + dx[s]) == xy[0] && (ny + dy[s]) == xy[1]) {
 
 							q.add(new int[] { nx, ny, xy[2] + 1 });
-							if (arr[nx][ny] == 0)
-								arr[nx][ny] = xy[2] + 1;
-//							if (xy[2] + 1 == goal && !v[nx][ny]) {
 							if (xy[2] + 1 <= goal) {
 								cnt++;
 							}
 							v[nx][ny] = true;
-//							}
 							break;
 						}
 					}
@@ -93,3 +86,13 @@ public class Solution_D0_1953_서울_20반_권지훈 {
 
 	}
 }
+
+/*
+1
+5 6 2 1 3      
+0 0 5 3 6 0
+0 0 2 0 2 0
+3 3 1 3 7 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+*/
