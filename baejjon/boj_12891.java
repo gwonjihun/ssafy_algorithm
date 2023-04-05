@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 /*
-* 1. ë¨¼ì? 0ë¶??„° p-1ë²ˆì§¸ê¹Œì??˜ ê¸???“¤ ì¤‘ì— agct?˜ ê¸???ˆ˜ ì¹´ìš´?Š¸ë¥? ?•´ì£¼ë©´?„œ8,
+* 1. ë¨¼ï¿½? 0ï¿½??ï¿½ï¿½ p-1ë²ˆì§¸ê¹Œï¿½??ï¿½ï¿½ ï¿½??ï¿½ï¿½?ï¿½ï¿½ ì¤‘ì— agct?ï¿½ï¿½ ï¿½??ï¿½ï¿½?ï¿½ï¿½ ì¹´ìš´?ï¿½ï¿½ï¿½? ?ï¿½ï¿½ì£¼ë©´?ï¿½ï¿½8,
 * */
 public class boj_12891 {
     static int length;
@@ -26,10 +26,8 @@ public class boj_12891 {
         cnt.put('C',Integer.parseInt(st.nextToken()));
         cnt.put('G',Integer.parseInt(st.nextToken()));
         cnt.put('T',Integer.parseInt(st.nextToken()));
-        //?—¬ê¸°ê¹Œì§ê? ?°?´?„° ?…? ¥ ë¶?ë¶?
         int s = 0;
         int e = part-1;
-        //ì´ˆê¸°?— ???•´?„œ ê³„ì‚°
         for(int i = 0; i<part;i++){
             cnt.compute(str[i],(c,j)->j-1);
         }

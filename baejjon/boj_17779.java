@@ -48,7 +48,6 @@ class boj_17779 {
     static void solution(int x, int y, int d1, int d2) {
         boolean[][] border = new boolean[N][N];
 
-        // Í≤ΩÍ≥Ñ?Ñ† ?Ñ∏?åÖ
         for (int i = 0; i <= d1; i++) {
             border[x + i][y - i] = true;
             border[x + d2 + i][y + d2 - i] = true;
@@ -58,10 +57,9 @@ class boj_17779 {
             border[x + i][y + i] = true;
             border[x + d1 + i][y - d1 + i] = true;
         }
-
+//		Í≤åÎ¶¨Î©òÎçîÎßÅ Í≤ΩÍ≥ÑÏÑ† trueÎ°ú Í∑∏Î†§ÎÜìÍ∏∞
         int[] peopleSum = new int[5];
 
-        // 1 Íµ¨Ïó≠ ?ù∏Íµ¨Ïàò
         for (int i = 0; i < x + d1; i++) {
             for (int j = 0; j <= y; j++) {
                 if (border[i][j]) break;
@@ -69,7 +67,6 @@ class boj_17779 {
             }
         }
 
-        // 2 Íµ¨Ïó≠ ?ù∏Íµ¨Ïàò
         for (int i = 0; i <= x + d2; i++) {
             for (int j = N - 1; j > y; j--) {
                 if (border[i][j]) break;
@@ -77,7 +74,6 @@ class boj_17779 {
             }
         }
 
-        // 3 Íµ¨Ïó≠ ?ù∏Íµ¨Ïàò
         for (int i = x + d1; i < N; i++) {
             for (int j = 0; j < y - d1 + d2; j++) {
                 if (border[i][j]) break;
@@ -85,7 +81,6 @@ class boj_17779 {
             }
         }
 
-        // 4 Íµ¨Ïó≠ ?ù∏Íµ¨Ïàò
         for (int i = x + d2 + 1; i < N; i++) {
             for (int j = N - 1; j >= y - d1 + d2; j--) {
                 if (border[i][j]) break;
@@ -93,17 +88,14 @@ class boj_17779 {
             }
         }
 
-        // 5 Íµ¨Ïó≠ ?ù∏Íµ¨Ïàò
         peopleSum[4] = totalPeople;
 
         for (int i = 0; i < 4; i++) {
             peopleSum[4] -= peopleSum[i];
         }
 
-        // ?†ï?†¨
         Arrays.sort(peopleSum);
 
-        // ÏµúÎ? - ÏµúÏÜå
         min = Math.min(min, peopleSum[4] - peopleSum[0]);
     }
 }
