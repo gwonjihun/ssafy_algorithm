@@ -55,16 +55,34 @@ public class Main_boj_19238_스타트택시 {
 			st = new StringTokenizer(br.readLine(), " ");
 			int sx = Integer.parseInt(st.nextToken())-1;
 			int sy = Integer.parseInt(st.nextToken())-1;
-			map[sx][sy] = i+1;
 			int ex = Integer.parseInt(st.nextToken())-1;
 			int ey = Integer.parseInt(st.nextToken())-1;
 			
 			p[i] = new person(sx, sy, ex, ey);
 		}
-		
-
+		bfs(tx,ty);
 	}
 	
-
+	static void bfs(int x, int y) {
+		boolean[][] v = new boolean[n][n];
+		Deque<int[]> q = new ArrayDeque<>();
+		q.add(new int[] {x,y,0});
+		v[x][y]= true;
+		while(!q.isEmpty()) {
+			int[] cur = q.poll();
+			for(int d = 0 ; d<4;d++) {
+				int nx = x+dx[d];
+				int ny = y+ dy[d];
+				if(inRange(x,y)&&v[nx][ny]) {
+					for(person)
+				}
+			}
+		
+		}
+			
+	}
+	static boolean inRange(int x , int y) {
+		return 0<=x&&x<n&&0<=y&&y<n;
+	}
 
 }
