@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.StringTokenizer;
 
-public class boj_1422 {
+public class Main_boj_1422_숫자의_신_그리디_플래4 {
 
 
     public static void main(String[] args) throws IOException {

@@ -3,7 +3,7 @@ package gwonjihun.baejjon;
 import java.util.*;
 import java.io.*;
 
-class boj_17779 {
+class Main_boj_17779_게리멘더링2 {
     static int N;
     static int[][] arr;
     static int totalPeople = 0;

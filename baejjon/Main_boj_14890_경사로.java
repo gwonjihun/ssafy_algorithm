@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class boj_14890 {
+public class Main_boj_14890_경사로 {
 	private static int n, l;
 	private static int[][] map;
 
@@ -34,11 +34,11 @@ public class boj_14890 {
 
 		for (int i=1; i<=n; i++) {
 			if (check(i,0,0)) {
-				//?��
+				//가로
 				cnt++;
 			}
 			if (check(0,i,1)) {
-				//?��
+				//세로
 				cnt++;
 			}
 		}

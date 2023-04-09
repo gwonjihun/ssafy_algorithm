@@ -6,7 +6,7 @@ import java.util.*;
 /*
 * 1. 먼�? 0�??�� p-1번째까�??�� �??��?�� 중에 agct?�� �??��?�� 카운?���? ?��주면?��8,
 * */
-public class boj_12891 {
+public class Main_boj_12891_DNA_슬라이딩윈도우 {
     static int length;
     static int part;
     static char[] str;
