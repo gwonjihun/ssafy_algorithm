@@ -4,10 +4,11 @@ import java.util.*;
 import java.io.*;
 
 public class BfsDfs {
-	static int[] dx = {-1,0,1,0};//?ƒ?š°?•˜ì¢?
+	static int[] dx = {-1,0,1,0};//?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½?
 	static int[] dy = {0,1,0,-1};//
 	static int N=5,C=0;
 	static int[][] a;
+	static int temp;
 	static boolean[][] v;
 	
 	public static void main(String[] args) throws Exception{
