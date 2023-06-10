@@ -17,7 +17,7 @@ public class boj_2468 {
         n = Integer.parseInt(br.readLine());
         arr = new int[n][n];
 
-        // max ë¹—ë¬¼ ?†’?´
+        // max ë¹—ë¬¼ ?ï¿½ï¿½?ï¿½ï¿½
         int Maxh = 0;
 
         //map data input
@@ -32,7 +32,8 @@ public class boj_2468 {
         }
 //        System.out.println(Maxh);
         int answer =0;
-        for(int h= 0;h<Maxh+1;h++){
+//        for(int h= 0;h<Maxh+1;h++){
+        	for(int h= Maxh;h>=0;h--){
             checked = new boolean[n][n];
             int cnt = 0;
             for(int x=0;x<n;x++){
@@ -40,7 +41,7 @@ public class boj_2468 {
                     if(!checked[x][y] && arr[x][y]>h){
                         cnt += dfs(x,y,h);
 //                        cnt += bfs(x,y,h);
-//                        ?—¬ê¸°ì„œ ê·¸ë˜?”„ ?ƒ?ƒ‰?„ ?†µ?•´?„œ ?•ˆ? „?˜?—­?“¤ ?´?–´? ¸?ˆ?Š” ë¶?ë¶? ì²´í¬?•´ì£¼ê¸°
+//                        ?ï¿½ï¿½ê¸°ì„œ ê·¸ë˜?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ï¿½?ï¿½? ì²´í¬?ï¿½ï¿½ì£¼ê¸°
                     }
                 }
 
