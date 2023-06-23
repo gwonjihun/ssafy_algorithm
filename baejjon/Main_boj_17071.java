@@ -36,8 +36,11 @@ public class Main_boj_17071 {
 			int newTime = time%2;
 			if(v[K][newTime]) return time;
 		
+			
+			
+			System.out.println("");
 		
-			for(int j = 0 ; j < q.size(); j++) {
+			for(int j = 0, size = q.size() ; j < size; j++) {
 				int now = q.poll();
 				int nextTime = (time+1)%2;
 				int next;
@@ -48,12 +51,12 @@ public class Main_boj_17071 {
 					q.add(next);
 				}
 				next = now +1;
-				if(next>=0&& !v[next][nextTime]) {
+				if(next<=500000&& !v[next][nextTime]) {
 					v[next][nextTime]= true;
 					q.add(next);
 				}
 				next = now *2;
-				if(next>=0&& !v[next][nextTime]) {
+				if(next<=500000&& !v[next][nextTime]) {
 					v[next][nextTime]= true;
 					q.add(next);
 				}
