@@ -11,7 +11,7 @@ import java.util.*;
  * 
  **/
 public class Main_boj_19238_스타트택시 {
-	static class person {
+	static class person implements Comparator<person>{
 		int sx, sy, ex, ey;
 
 		public person(int sx, int sy, int ex, int ey) {
@@ -20,15 +20,26 @@ public class Main_boj_19238_스타트택시 {
 			this.ex = ex;
 			this.ey = ey;
 		}
+
+		@Override
+		public int compare(person o1, person o2) {
+			// TODO Auto-generated method stub
+			
+			if(o1.sx == o2.sx) {
+				return o1.sy-o2.sy;
+			}
+			return o1.sx-o2.sx;
+		}
+		
 	}
 
 	static int[] dx = { -1, 0, 0, 1 }, dy = { 0, -1, 1, 0 };
 	static int car_x, car_y, fuel;
 	static int[][] map;
-	static person[] p;
 	static boolean[] vis_p;
-	static int n, m,tx,ty;
-
+	static PriorityQueue<person> pq;
+	static int n, m;
+	
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
@@ -37,7 +48,6 @@ public class Main_boj_19238_스타트택시 {
 		fuel = Integer.parseInt(st.nextToken());
 
 		map = new int[n][n];
-		p = new person[m];
 		vis_p = new boolean[m];
 		for (int i = 0; i < n; i++) {
 			st = new StringTokenizer(br.readLine(), " ");
