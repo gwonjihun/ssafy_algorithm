@@ -115,3 +115,43 @@ public class Main_boj_21608_ing {
         map[poll.y][poll.x] = num;
     }
 }
+class Point implements Comparable<Point> {
+    int y;
+    int x;
+    int nearCount;
+    int likeCount;
+ 
+    public Point(int y, int x, int nearCount, int likeCount) {
+        this.y = y;
+        this.x = x;
+        this.nearCount = nearCount;
+        this.likeCount = likeCount;
+    }
+ 
+    @Override
+    public int compareTo(Point o2) {
+        if (this.likeCount > o2.likeCount) {
+            return -1;
+        } else if (this.likeCount < o2.likeCount) {
+            return 1;
+        } else {
+            if (this.nearCount > o2.nearCount) {
+                return -1;
+            } else if (this.nearCount < o2.nearCount) {
+                return 1;
+            } else {
+                if (this.y > o2.y) {
+                    return 1;
+                } else if (this.y < o2.y) {
+                    return -1;
+                } else {
+                    if (this.x > o2.x) {
+                        return 1;
+                    } else {
+                        return -1;
+                    }
+                }
+            }
+        }
+    }
+}
