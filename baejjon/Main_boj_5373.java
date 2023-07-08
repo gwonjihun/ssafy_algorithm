@@ -4,13 +4,20 @@ import java.io.*;
 import java.util.*;
 
 public class Main_boj_5373 {
-	static char[][] init = { { '-', '-', '-', 'o', 'o', 'o', '-', '-', '-', },
-			{ '-', '-', '-', 'o', 'o', 'o', '-', '-', '-', }, { '-', '-', '-', 'o', 'o', 'o', '-', '-', '-', },
-			{ 'g', 'g', 'g', 'w', 'w', 'w', 'b', 'b', 'b' }, { 'g', 'g', 'g', 'w', 'w', 'w', 'b', 'b', 'b' },
-			{ 'g', 'g', 'g', 'w', 'w', 'w', 'b', 'b', 'b' }, { '-', '-', '-', 'r', 'r', 'r', '-', '-', '-' },
-			{ '-', '-', '-', 'r', 'r', 'r', '-', '-', '-' }, { '-', '-', '-', 'r', 'r', 'r', '-', '-', '-' },
-			{ '-', '-', '-', 'y', 'y', 'y', '-', '-', '-' }, { '-', '-', '-', 'y', 'y', 'y', '-', '-', '-' },
-			{ '-', '-', '-', 'y', 'y', 'y', '-', '-', '-' }, };
+	static char[][] init = { 
+			{ '-', '-', '-', 'o', 'o', 'o', '-', '-', '-', },
+			{ '-', '-', '-', 'o', 'o', 'o', '-', '-', '-', }, 
+			{ '-', '-', '-', 'o', 'o', 'o', '-', '-', '-', },
+			{ 'g', 'g', 'g', 'w', 'w', 'w', 'b', 'b', 'b' }, 
+			{ 'g', 'g', 'g', 'w', 'w', 'w', 'b', 'b', 'b' },
+			{ 'g', 'g', 'g', 'w', 'w', 'w', 'b', 'b', 'b' }, 
+			{ '-', '-', '-', 'r', 'r', 'r', '-', '-', '-' },
+			{ '-', '-', '-', 'r', 'r', 'r', '-', '-', '-' }, 
+			{ '-', '-', '-', 'r', 'r', 'r', '-', '-', '-' },
+			{ '-', '-', '-', 'y', 'y', 'y', '-', '-', '-' }, 
+			{ '-', '-', '-', 'y', 'y', 'y', '-', '-', '-' },
+			{ '-', '-', '-', 'y', 'y', 'y', '-', '-', '-' }, 
+			};
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -29,6 +36,9 @@ public class Main_boj_5373 {
 			for (int i = 0; i < N; i++) {
 				char[] menu = st.nextToken().toCharArray();
 				rotate(menu, dice);
+			}
+			for(int i = 0;i<12;i++) {
+				System.out.println(Arrays.toString(dice[i] ));
 			}
 			for (int i = 3; i < 6; i++) {
 				for (int j = 3; j < 6; j++) {
@@ -255,15 +265,15 @@ public class Main_boj_5373 {
 //	                    }
 				char temp; // o->b b->r r->g g->o
 				for (int i = 0; i < 3; i++) {
-					temp = divice[3 + i][3];
-					divice[i][3] = divice[9 + i][3];
+					temp = divice[i][3];
+					divice[i][3] = divice[11 - i][3];
 					divice[9 + i][3] = divice[6 + i][3];
 					divice[6 + i][3] = divice[3 + i][3];
 					divice[3 + i][3] = temp;
 				}
 				for (int i = 0; i < 3; i++) {
 					for (int j = 0; j < 3; j++) {
-						divice[i][3 + j] = tmp[i][j];
+						divice[3+i][j] = tmp[i][j];
 					}
 				}
 			} else {
@@ -280,7 +290,7 @@ public class Main_boj_5373 {
 //	                    }
 				char temp; // o->b b->r r->g g->o
 				for (int i = 0; i < 3; i++) {
-					temp = divice[3 + i][3];
+					temp = divice[i][3];
 					divice[i][3] = divice[3 + i][3];
 					divice[3 + i][3] = divice[6 + i][3];
 					divice[6 + i][3] = divice[9 + i][3];
@@ -288,7 +298,7 @@ public class Main_boj_5373 {
 				}
 				for (int i = 0; i < 3; i++) {
 					for (int j = 0; j < 3; j++) {
-						divice[i][3 + j] = tmp[i][j];
+						divice[3+i][ j] = tmp[i][j];
 					}
 				}
 			}
@@ -308,7 +318,7 @@ public class Main_boj_5373 {
 //	                    }
 				char temp; // o->b b->r r->g g->o
 				for (int i = 0; i < 3; i++) {
-					temp = divice[3 + i][5];
+					temp = divice[i][5];
 					divice[i][5] = divice[9 + i][5];
 					divice[9 + i][5] = divice[6 + i][5];
 					divice[6 + i][5] = divice[3 + i][5];
@@ -333,7 +343,7 @@ public class Main_boj_5373 {
 //	                    }
 				char temp; // o->b b->r r->g g->o
 				for (int i = 0; i < 3; i++) {
-					temp = divice[3 + i][5];
+					temp = divice[i][5];
 					divice[i][5] = divice[3 + i][5];
 					divice[3 + i][5] = divice[6 + i][5];
 					divice[6 + i][5] = divice[9 + i][5];
