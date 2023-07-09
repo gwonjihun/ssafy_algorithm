@@ -5,18 +5,25 @@ import java.util.*;
 
 public class Main_boj_5373 {
 	static char[][] init = { 
+			//U- D- L+ R+]
+			// gwg 
+			// owr    
+			// bwb
+			// -> 
 			{ '-', '-', '-', 'o', 'o', 'o', '-', '-', '-', },
 			{ '-', '-', '-', 'o', 'o', 'o', '-', '-', '-', }, 
 			{ '-', '-', '-', 'o', 'o', 'o', '-', '-', '-', },
+//			{ '1', '2', '3', 'o', '2', '3', '1', '2', '3' },
 			{ 'g', 'g', 'g', 'w', 'w', 'w', 'b', 'b', 'b' }, 
 			{ 'g', 'g', 'g', 'w', 'w', 'w', 'b', 'b', 'b' },
 			{ 'g', 'g', 'g', 'w', 'w', 'w', 'b', 'b', 'b' }, 
 			{ '-', '-', '-', 'r', 'r', 'r', '-', '-', '-' },
 			{ '-', '-', '-', 'r', 'r', 'r', '-', '-', '-' }, 
 			{ '-', '-', '-', 'r', 'r', 'r', '-', '-', '-' },
-			{ '-', '-', '-', 'y', 'y', 'y', '-', '-', '-' }, 
+			{ '-', '-', '-', 'y', 'y', 'y', '-', '-', '-' },
 			{ '-', '-', '-', 'y', 'y', 'y', '-', '-', '-' },
 			{ '-', '-', '-', 'y', 'y', 'y', '-', '-', '-' }, 
+//			{ '-', '-', '-', '3', '2', '1', '-', '-', '-' }, 
 			};
 
 	public static void main(String[] args) throws Exception {
@@ -36,9 +43,6 @@ public class Main_boj_5373 {
 			for (int i = 0; i < N; i++) {
 				char[] menu = st.nextToken().toCharArray();
 				rotate(menu, dice);
-			}
-			for(int i = 0;i<12;i++) {
-				System.out.println(Arrays.toString(dice[i] ));
 			}
 			for (int i = 3; i < 6; i++) {
 				for (int j = 3; j < 6; j++) {
@@ -86,12 +90,12 @@ public class Main_boj_5373 {
 				}
 			}
 			break;
-		case 'D':
+		case 'D':// + : o - : o  r->g g -> r r > b b -> o
 			if (menu[1] != '-') {
 				char[][] tmp = new char[3][3];
 				for (int i = 0; i < 3; i++) {
 					for (int j = 0; j < 3; j++) {
-						tmp[i][j] = divice[9 + 3 - j - 1][3 + i];
+						tmp[i][j] = divice[9 +j ][3 +3- i-1];
 //	                            tmp[i][j] = tmp[3+3-j-1][3+i];
 						// 이게 원래 90도 회전하는 코드닌깐
 					}
@@ -106,18 +110,19 @@ public class Main_boj_5373 {
 				}
 				char temp; // o->b b->r r->g g->o
 				for (int i = 0; i < 3; i++) {
-					temp = divice[0][3 + i];
-					divice[0][3 + i] = divice[5 - i][0];
-					divice[5 - i][0] = divice[8][5 - i];
-					divice[8][5 - i] = divice[3 + i][8];
-					divice[3 + i][8] = temp;
+					temp = divice[0][5 - i];
+					divice[0][5 - i] = divice[5 - i ][8];
+					divice[5 - i ][8] = divice[8][3+ i];
+					divice[8][3+i] = divice[3 + i][0];
+					divice[3 + i][0] = temp;
 				}
+
 
 			} else {
 				char[][] tmp = new char[3][3];
 				for (int i = 0; i < 3; i++) {
 					for (int j = 0; j < 3; j++) {
-						tmp[i][j] = divice[9 + j][3 + 3 - i - 1];
+						tmp[i][j] = divice[9 + 3 - j -1][3 +i];
 //	                            tmp[i][j] = tmp[3+3-j-1][3+i];
 						// 이게 원래 90도 회전하는 코드닌깐
 					}
@@ -130,18 +135,19 @@ public class Main_boj_5373 {
 						divice[9 + i][3 + j] = tmp[i][j];
 					}
 				}
+
 				char temp; // o->b b->r r->g g->o
 				for (int i = 0; i < 3; i++) {
-					temp = divice[0][3 + i];
-					divice[0][3 + i] = divice[3 + i][8];
-					divice[3 + i][8] = divice[8][5 - i];
-					divice[8][5 - i] = divice[5 - i][0];
-					divice[5 - i][0] = temp;
+					temp = divice[0][5 - i];
+					divice[0][5 - i] = divice[ 3+ i ][8];
+					divice[3 + i ][8] = divice[8][3+ i];
+					divice[8][3+i] = divice[5- i][0];
+					divice[5 - i ][0] = temp;
 				}
 
 			}
 			break;
-		case 'F':
+		case 'F': //+ :0  - :o
 			if (menu[1] != '-') {
 				char[][] tmp = new char[3][3];
 				for (int i = 0; i < 3; i++) {
@@ -183,10 +189,10 @@ public class Main_boj_5373 {
 				char temp; // o->b b->r r->g g->o
 				for (int i = 0; i < 3; i++) {
 					temp = divice[9][5 - i];
-					divice[9][5 - i] = divice[5][i];
+					divice[9][5 - i] = divice[5][ i];
 					divice[5][i] = divice[5][3 + i];
-					divice[5][3 + i] = divice[5][6 + i];
-					divice[5][6 + i] = temp;
+					divice[5][3 + i] = divice[5][6+i];
+					divice[5][6+i] = temp;
 
 				}
 				for (int i = 0; i < 3; i++) {
@@ -197,11 +203,11 @@ public class Main_boj_5373 {
 			}
 			break;
 		case 'B':
-			if (menu[1] != '-') {
+			if (menu[1] != '-') { // g-> y y-> b b->w
 				char[][] tmp = new char[3][3];
 				for (int i = 0; i < 3; i++) {
 					for (int j = 0; j < 3; j++) {
-						tmp[i][j] = divice[3 - j - 1][3 + i];
+						tmp[i][j] = divice[j][3 +3 -i-1];
 //	                            tmp[i][j] = tmp[3+3-j-1][3+i];
 						// 이게 원래 90도 회전하는 코드닌깐
 					}
@@ -209,7 +215,7 @@ public class Main_boj_5373 {
 //	                    for (int i = 0; i < 5; i++) {
 //	                        System.out.println(Arrays.toString(tmp[i]));
 //	                    }
-				char temp; // o->b b->r r->g g->o
+				char temp; 
 				for (int i = 0; i < 3; i++) {
 					temp = divice[11][5 - i];
 					divice[11][5 - i] = divice[3][i];
@@ -223,11 +229,11 @@ public class Main_boj_5373 {
 					}
 				}
 
-			} else {
+			} else {// g -> w w->b b->y y->g 
 				char[][] tmp = new char[3][3];
 				for (int i = 0; i < 3; i++) {
 					for (int j = 0; j < 3; j++) {
-						tmp[i][j] = divice[j][3 + 3 - i - 1];
+						tmp[i][j] = divice[3-j-1][ 3 + i ];
 //	                            tmp[i][j] = tmp[3+3-j-1][3+i];
 						// 이게 원래 90도 회전하는 코드닌깐
 					}
@@ -263,10 +269,10 @@ public class Main_boj_5373 {
 //	                    for (int i = 0; i < 5; i++) {
 //	                        System.out.println(Arrays.toString(tmp[i]));
 //	                    }
-				char temp; // o->b b->r r->g g->o
+				char temp; // o->b b->r r->g g->o 각 지점에서 3칸 떨어진 지점과 맵핑을 해주면 자연스럽게 하났기 남게 된다.
 				for (int i = 0; i < 3; i++) {
 					temp = divice[i][3];
-					divice[i][3] = divice[11 - i][3];
+					divice[i][3] = divice[9 + i][3];
 					divice[9 + i][3] = divice[6 + i][3];
 					divice[6 + i][3] = divice[3 + i][3];
 					divice[3 + i][3] = temp;
@@ -280,7 +286,7 @@ public class Main_boj_5373 {
 				char[][] tmp = new char[3][3];
 				for (int i = 0; i < 3; i++) {
 					for (int j = 0; j < 3; j++) {
-						tmp[i][j] = divice[j][3 + 3 - i - 1];
+						tmp[i][j] = divice[3+j][ 3 - i - 1];
 //	                            tmp[i][j] = tmp[3+3-j-1][3+i];
 						// 이게 원래 90도 회전하는 코드닌깐
 					}
@@ -290,6 +296,7 @@ public class Main_boj_5373 {
 //	                    }
 				char temp; // o->b b->r r->g g->o
 				for (int i = 0; i < 3; i++) {
+					temp = divice[i][3];
 					temp = divice[i][3];
 					divice[i][3] = divice[3 + i][3];
 					divice[3 + i][3] = divice[6 + i][3];
@@ -326,7 +333,7 @@ public class Main_boj_5373 {
 				}
 				for (int i = 0; i < 3; i++) {
 					for (int j = 0; j < 3; j++) {
-						divice[i][3 + j] = tmp[i][j];
+						divice[3+i][6 + j] = tmp[i][j];
 					}
 				}
 			} else {
@@ -351,13 +358,17 @@ public class Main_boj_5373 {
 				}
 				for (int i = 0; i < 3; i++) {
 					for (int j = 0; j < 3; j++) {
-						divice[i][3 + j] = tmp[i][j];
+						divice[3+i][6 + j] = tmp[i][j];
 					}
 				}
 			}
 			break;
 
 		}
+//		for(int i = 0;i<12;i++) {
+//			System.out.println(Arrays.toString(divice[i] ));
+//		}
+//		System.out.println("---------------------");
 	}
 //	    {'-','-','-','o','o','o','-','-','-',},
 //	    {'-','-','-','o','o','o','-','-','-',},
