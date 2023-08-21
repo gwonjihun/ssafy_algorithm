@@ -49,7 +49,7 @@ public class Main_boj_27498 {
 			}else {
 				union(s, e);
 
-				System.out.println(Arrays.toString(parent));
+//				System.out.println(Arrays.toString(parent));
 			}
 			
 		}
@@ -62,7 +62,7 @@ public class Main_boj_27498 {
 				cost += cur.w;
 				union(cur.s,cur.e);
 
-				System.out.println(Arrays.toString(parent));
+//				System.out.println(Arrays.toString(parent));
 			}
 		}
 		System.out.println(ans-cost);
