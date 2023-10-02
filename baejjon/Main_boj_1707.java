@@ -19,7 +19,7 @@ public class Main_boj_1707 {
 			e = Integer.parseInt(st.nextToken());
 			graph = new ArrayList<>();
 			color = new int[v+1];
-			for(int i = 0; i<v ; i++) {
+			for(int i = 0; i<v+1 ; i++) {
 				graph.add(new ArrayList<>());
 			}
 			for(int i = 0 ; i <e;i++) {
@@ -30,13 +30,37 @@ public class Main_boj_1707 {
 				graph.get(from).add(to);
 				graph.get(to).add(from);
 			}
+			boolean result = false;
 			for(int i = 1 ; i <=v;i++) {
 				if(color[i]==0) {
-					
+					result = bfs(i);
 				}
+				if(!result) break;
 			}
 			
+			
+			if(result) System.out.println("YES");
+			else System.out.println("NO");
+			
 		}
+	}
+	
+	static boolean bfs(int x) {
+		Queue<Integer> q = new ArrayDeque<>();
+		q.add(x);
+		color[x]= red;
+		while(!q.isEmpty()) {
+			int cur = q.poll();
+			for(int next : graph.get(cur)) {
+				if(color[next]== color[cur]) return false;
+				
+				if(color[next]==0) {
+					color[next]= color[cur]*-1;
+					q.add(next);
+				}
+			}
+		}
+		return true;
 	}
 	
 }
