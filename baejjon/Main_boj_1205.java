@@ -24,19 +24,16 @@ public class Main_boj_1205 {
 		if (N == P && input <= arr[arr.length - 1]) {
 			System.out.println(-1);
 		} else {
-
 			int rank = 1;
 			for (int i = 0; i < N; i++) {
-//			System.out.println(arr[i]);
-				if (arr[i] > input) {
+				if (input < arr[i]) {
 					rank++;
 				} else {
 					break;
-//					P--;
 				}
 			}
 
-			System.out.print(rank);
+			System.out.println(rank);
 		}
 	}
 }
