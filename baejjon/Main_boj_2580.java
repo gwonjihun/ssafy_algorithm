@@ -23,6 +23,7 @@ public class Main_boj_2580 {
 
 		if (row == 9) {
 			dfs(col + 1, 0);
+			return;
 		}
 		if (col == 9) {
 			for (int[] a : map) {
