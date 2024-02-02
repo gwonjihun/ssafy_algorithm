@@ -3,7 +3,7 @@ package gwonjihun.codetree;
 import java.io.*;
 import java.util.*;
 
-public class Main_왕실의기사대결 {
+public class Main_왕실의기사대결_fail {
 	static int L, N, Q;
 	static int[][] map;
 	static Night[] nights;// 기사들 정보를 저장해놓는다.
