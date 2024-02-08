@@ -1,28 +1,7 @@
-<<<<<<< HEAD
-package gwonjihun.baejjon;
-
-import java.io.*;
-import java.util.*;
-
-public class Main_boj_16947 {
-	static int[] dx = {-1,-1,0,1,1,0}, dy= {0,1,1,0,-1,-1}; 
-	static List[] graph;
-	static int N;
-	static boolean[] circle;//해당 역이 순환 역인지를 확인
-	static int result;
-	public static void main(String[] args) throws Exception{
-		
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
-		
-	}
-}
-=======
 package Boj;
-
 import java.io.*;
 import java.util.*;
-public class Main_boj_16947 {
+public class Main_boj_16947_aga {
     static int N;
     static List<Integer>[] graph;
     static boolean[] isCircle;//각 번호마다 순환이 되는지 유무를 확인하기 위한 함수
@@ -84,7 +63,7 @@ public class Main_boj_16947 {
         q.add(new int[] {st,0});
         while(!q.isEmpty()){
             int[] cur = q.poll();
-            if(visited[cur[0]]) return cur[1];
+            if(isCircle[cur[0]]) return cur[1];
 
             for(int next : graph[cur[0]]){
                 if(!visited[next]){
@@ -96,4 +75,3 @@ public class Main_boj_16947 {
         return 0;
     }
 }
->>>>>>> a153eaebe6ef8fedb0e55392f2eb6ba4aa36de6d
