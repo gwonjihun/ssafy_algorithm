@@ -46,10 +46,10 @@ public class Main_boj_16234 {
 
 				}
 			}
-			for(int[] a : worlds) {
-			System.out.println(Arrays.toString(a));
-			}
-			System.out.println("_+_+_+_+_+_+_+_+_+_+_+_+_+");
+//			for(int[] a : worlds) {
+//			System.out.println(Arrays.toString(a));
+//			}
+//			System.out.println("_+_+_+_+_+_+_+_+_+_+_+_+_+");
 			if (flag) {
 				day++;
 			} else {
@@ -76,7 +76,7 @@ public class Main_boj_16234 {
 					continue;
 				int bet = Math.abs(curC - worlds[nx][ny]);
 				if (L <= bet && bet <= R) {
-					System.out.println(cur[0]+", "+ cur[1]+":"+ bet);
+//					System.out.println(cur[0]+", "+ cur[1]+":"+ bet);
 					visited[nx][ny] = true;
 					sum += worlds[nx][ny];
 					q.add(new int[] { nx, ny });
