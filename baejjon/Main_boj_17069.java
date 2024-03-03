@@ -6,64 +6,50 @@ import java.util.*;
 public class Main_boj_17069 {
 
 	static int[][] map;
-	static int N;
+	static int n;
 	static int cnt;
-	static boolean v[][];
-
+	static long[][][] dp;
+	
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		N = Integer.parseInt(br.readLine());
-		map = new int[N][N];
-		for (int i = 0; i < N; i++) {
-			StringTokenizer st = new StringTokenizer(br.readLine());
+		n = Integer.parseInt(br.readLine());
+		map = new int[n + 1][n + 1];
+        for (int i = 1; i <= n; i++) {
+            String[] inputs = br.readLine().split(" ");
+            for (int j = 1; j <= n; j++) {
+                map[i][j] = Integer.parseInt(inputs[j-1]);
+            }
+        }
 
-			for (int j = 0; j < N; j++) {
-				map[i][j] = Integer.parseInt(st.nextToken());
-			}
-		}
-		cnt = 0;
-		v = new boolean[N][N];
+        if(map[n][n]==1){
+            System.out.println(0);
+            return;
+        }
 
-		dfs(0,1,0);
-		System.out.println(cnt);
-	}
+        long[][][] dp = new long[n+1][n+1][3];
+        dp[1][2][0] = 1; // initialize
 
-	// dir : 0 , 1, 2 는 가로, 세로, 대각선을 의미한다.
-	static void dfs(int tx, int ty, int dir) {
-		if(!inRange(tx,ty)) {
-			return;
-		}
-		if (tx == N - 1 && ty == N - 1) {
-			cnt++;
-			return;
-		}
-		if (dir == 0 || dir == 2) {
-//			System.out.println("!!");
-			int nx = tx ;
-			int ny = ty +1;
-			if(inRange(nx, ny)&&map[nx][ny]==0) {
-				dfs(nx,ny,0);
-			}
-		}
-		if (dir == 1 || dir == 2) {
 
-//			System.out.println("!!!");
-			int nx = tx +1;
-			int ny = ty ;
-			if(inRange(nx, ny)&&map[nx][ny]==0) {
-				dfs(nx,ny,1);
-			}
-		}
-		//여기는 대각선으로 이동하는 경우들만을 적용하는것이기 떄문에
-		int nx = tx + 1;
-		int ny = ty + 1;
-		if(inRange(nx, ny)&&map[nx][ny]==0) {
+        // DP
+        for (int i = 1; i <= n; i++) {
+            for (int j = 3; j <= n; j++) {
+                if(map[i][j]==1) continue;
 
-//			System.out.println("!!!!");
-			dfs(nx,ny,2);
-		}
-	}
-	static boolean inRange(int x,int y) {
-		return 0<=x&&x<N&&0<=y&&y<N;
-	}
+                // 가로 (0)
+                dp[i][j][0] = dp[i][j - 1][0] + dp[i][j - 1][2];
+
+                if(i==1) continue; // 맨 윗줄이면 continue
+
+                // 세로 (1)
+                dp[i][j][1] = dp[i - 1][j][1] + dp[i - 1][j][2];
+
+                if(map[i-1][j]==1 || map[i][j-1]==1) continue;
+
+                // 대각선 (2)
+                dp[i][j][2] = dp[i-1][j-1][0] + dp[i-1][j-1][1] + dp[i-1][j-1][2];
+            }
+        }
+
+        System.out.println(dp[n][n][0]+dp[n][n][1]+dp[n][n][2]);
+    }
 }
