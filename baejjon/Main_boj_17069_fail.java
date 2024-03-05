@@ -57,7 +57,7 @@ public class Main_boj_17069_fail {
 		//여기는 대각선으로 이동하는 경우들만을 적용하는것이기 떄문에
 		int nx = tx + 1;
 		int ny = ty + 1;
-		if(inRange(nx, ny)&&map[nx][ny]==0) {
+		if(inRange(nx, ny)&&(map[nx][ny]==0&&map[tx][ny]==0&&map[nx][ty]==0)) {
 
 //			System.out.println("!!!!");
 			dfs(nx,ny,2);
