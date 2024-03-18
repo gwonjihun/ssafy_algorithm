@@ -75,14 +75,14 @@ public class Main_codeTree_전투로봇 {
 				break;
 			}
 			Fish target = fishes.poll();
-			System.out.println(target.x + " " + target.y);
+//			System.out.println(target.x + " " + target.y);
 			eat++;
 			time += target.dist;
 			if(eat==age) {
 				age++;
 				eat=0;
 			}
-			System.out.println("age : " + age + " eat : "+ eat);
+//			System.out.println("age : " + age + " eat : "+ eat);
 			arr[target.x][target.y] = 0;
 			q.add(new Fish(target.x,target.y,0));
 		}
