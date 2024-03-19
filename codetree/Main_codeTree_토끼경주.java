@@ -27,7 +27,7 @@ public class Main_codeTree_토끼경주 {
 			this.j = j;
 			this.id = id;
 		}
-
+//4539 91
 		// 이동할 토끼를 결정하기 위해 정렬함수를 만들어줍니다.
 		public int compareTo(Rabbit rb) {
 			if (this.j != rb.j)
