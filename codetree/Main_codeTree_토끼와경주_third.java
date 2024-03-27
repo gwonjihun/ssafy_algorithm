@@ -2,7 +2,7 @@ package CodeTree;
 
 import java.io.*;
 import java.util.*;
-
+// 기부니가 좋구요!
 public class Main_codeTree_토끼와경주_third {
 
     static class Rabbit implements Comparable<Rabbit> {
