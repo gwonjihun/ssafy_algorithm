@@ -1,142 +1,211 @@
-package gwonjihun.codetree;
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.PriorityQueue;
 
-class Pair implements Comparable<Pair> {
-    int first, second;
-    
-    public Pair(int first, int second) {
-        this.first = first;
-        this.second = second;
+class Rabbit implements Comparable<Rabbit>{
+    public int x;
+    public int y;
+    public int jump;
+    public long pid;
+    public Rabbit(int x, int y, int jump, long pid){
+        this.x = x;
+        this.y = y;
+        this.jump = jump;
+        this.pid = pid;
     }
-
     @Override
-    public int compareTo(Pair p) {
-        // first, second 순으로 오름차순 정렬이 되도록 합니다.
-        if(this.first != p.first)
-            return this.first - p.first;
-        return this.second - p.second;
+    public int compareTo(Rabbit rabbit){
+        if(this.jump > rabbit.jump){
+            return 1;
+        }
+        else if(this.jump < rabbit.jump){
+            return -1;
+        }
+        if(this.x + this.y > rabbit.x + rabbit.y){
+            return 1;
+        }
+        else if(this.x + this.y < rabbit.x + rabbit.y){
+            return -1;
+        }
+        if(this.y > rabbit.y){
+            return 1; 
+        }
+        else if(this.y < rabbit.y){
+            return -1; 
+        }
+        if(this.x > rabbit.x){
+            return 1; 
+        }
+        else if(this.x < rabbit.x){
+            return -1;
+        }
+        if(this.pid > rabbit.pid){
+            return 1;
+        }
+        else{
+            return -1;
+        }
     }
 }
 
-public class Main_codeTree_격자숫자놀이 {
-    public static final int MAX_NUM = 100;
-    public static final int MAX_N = 100;
-    
-    public static int n = 3, m = 3;
-    public static int r, c, k;
-    
-    public static int[][] grid = new int[MAX_N + 1][MAX_N + 1];
-    
-    // row 행에 대해 숫자 놀이를 진행합니다.
-    public static int rowPlay(int row) {
-        // 각 숫자에 대해 빈도수를 구해줍니다.
-        // 정렬시 빈도수, 숫자 순으로 오름차순 정렬이 되도록
-        // (빈도수, 숫자) 형태로 저장해줍니다.
-        ArrayList<Pair> pairs = new ArrayList<>();
-        for(int num = 1; num <= MAX_NUM; num++) {
-            int frequency = 0;
-            for(int col = 1; col <= m; col++)
-                if(grid[row][col] == num)
-                    frequency++;
-            
-            if(frequency > 0)
-                pairs.add(new Pair(frequency, num));
-        }
-        
-        // 숫자를 새로 적어줘야 하므로,
-        // 그 전에 기존 row 행에 있던 숫자들을 전부 0으로 바꿔줍니다.
-        for(int col = 1; col <= m; col++)
-            grid[row][col] = 0;
-        
-        Collections.sort(pairs);
-        
-        // row 행에 새로운 숫자를 차례대로 적어줍니다.
-        for(int i = 0; i < pairs.size(); i++) {
-            int frequency = pairs.get(i).first;
-            int num = pairs.get(i).second;
-            grid[row][i * 2 + 1] = num;
-            grid[row][i * 2 + 2] = frequency;
-        }
-    
-        return pairs.size() * 2;
+class Point implements Comparable<Point>{
+    public int x;
+    public int y;
+    public long pid;
+    public Point(int x, int y, long pid){
+        this.x = x;
+        this.y = y;
+        this.pid = pid;
     }
-    
-    // col 열에 대해 숫자 놀이를 진행합니다.
-    public static int colPlay(int col) {    
-        // 각 숫자에 대해 빈도수를 구해줍니다.
-        // 정렬시 빈도수, 숫자 순으로 오름차순 정렬이 되도록
-        // (빈도수, 숫자) 형태로 저장해줍니다.
-        ArrayList<Pair> pairs = new ArrayList<>();
-        for(int num = 1; num <= MAX_NUM; num++) {
-            int frequency = 0;
-            for(int row = 1; row <= m; row++)
-                if(grid[row][col] == num)
-                    frequency++;
-            
-            if(frequency > 0)
-                pairs.add(new Pair(frequency, num));
+    @Override
+    public int compareTo(Point point){
+        if(this.x + this.y < point.x + point.y){
+            return 1;
         }
-        
-        // 숫자를 새로 적어줘야 하므로,
-        // 그 전에 기존 col 열에 있던 숫자들을 전부 0으로 바꿔줍니다.
-        for(int row = 1; row <= m; row++)
-            grid[row][col] = 0;
-        
-        Collections.sort(pairs);
-        
-        // col 열에 새로운 숫자를 차례대로 적어줍니다.
-        for(int i = 0; i < pairs.size(); i++) {
-            int frequency = pairs.get(i).first;
-            int num = pairs.get(i).second;
-            grid[i * 2 + 1][col] = num;
-            grid[i * 2 + 2][col] = frequency;
+        else if(this.x + this.y > point.x + point.y){
+            return -1;
         }
-    
-        return pairs.size() * 2;
+        if(this.y < point.y){
+            return 1; 
+        }
+        else if(this.y > point.y){
+            return -1; 
+        }
+        if(this.x < point.x){
+            return 1; 
+        }
+        else if(this.x > point.x){
+            return -1;
+        }
+        if(this.pid < point.pid){
+            return 1;
+        }
+        else{
+            return -1;
+        }
     }
-    
-    public static void simulate() {
-        // 행의 개수가 열의 개수와 일치하거나 더 많다면
-        // 행 단위로 진행 후, 최대로 긴 열의 크기를 구합니다.
-        if(n >= m) {
-            int maxCol = 0;
-            for(int row = 1; row <= n; row++)
-                maxCol = Math.max(maxCol, rowPlay(row));
-            m = maxCol;
-        }
-        // 열의 개수가 더 많다면
-        // 열 단위로 진행 후, 최대로 긴 행의 크기를 구합니다.
-        else {
-            int maxRow = 0;
-            for(int col = 1; col <= m; col++)
-                maxRow = Math.max(maxRow, colPlay(col));
-            n = maxRow;
-        }
+}
+
+
+public class Main {
+    static int Q,N,M,P;
+    static long totalSum = 0;
+    static int [] x; // 토끼 현재 x 좌표;
+    static int [] y; // 현재 y 좌표; 
+    static long [] score;// i 번째 토끼의 점수; 
+    static boolean [] flag;// 이번턴에 뽑혔는지 검사하는 배열;
+    static long [] rdis; // 고유 이동 거리
+    static long [] rpid; // 고유 번호
+    static int[] dx = {1,0,-1,0};
+    static int[] dy = {0,1,0,-1};
+    static PriorityQueue<Rabbit> pq = new PriorityQueue<>();
+    static Map<Long,Integer> idMap = new HashMap<>();
+
+    public static int move(long moveDistance, int range){
+        moveDistance = moveDistance %((range-1)*2);
+        return moveDistance <= (range-1) ?  (int)moveDistance : (range-1) - (int)moveDistance % (range-1);
     }
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        r = sc.nextInt();
-        c = sc.nextInt();
-        k = sc.nextInt();
-        
-        for(int i = 1; i <= n; i++)
-            for(int j = 1; j <= m; j++)
-                grid[i][j] = sc.nextInt();
-        
-        int ans = -1;
-        // 최대 100초 동안 시뮬레이션을 진행합니다.
-        for(int t = 0; t <= 100; t++) {
-            if(grid[r][c] == k) {
-                ans = t;
-                break;
-            }
-        
-            simulate();
+    public static Point getNextDestination(int x, int y, int i, long dis){
+        int nx = x,ny = y;
+        if(i == 0){ // 오른쪽인 경우
+            nx = move(x + dx[i] * dis, M);
+        } 
+        if(i == 1){ // 아래쪽인 경우
+            ny = move(y + dy[i] * dis, N);
+        } 
+        if(i == 2){  // 왼쪽인 경우
+            nx = move(Math.abs(x + dx[i] * dis), M);
         }
-        
-        System.out.print(ans);
+        if(i == 3){ // 아래쪽인 경우
+            ny = move(Math.abs(y + dy[i] * dis), N);
+        } 
+        return new Point(nx, ny, 0);
     }
+    public static void process(int k, int best){
+        PriorityQueue<Point> seleted = new PriorityQueue<>();
+        flag = new boolean[P+1];
+        for(int i=0;i<k;++i){
+            Rabbit cur = pq.poll();
+            int myid = idMap.get(cur.pid);
+            PriorityQueue<Point> myPoint = new PriorityQueue<>();
+            for(int j=0;j<4;++j){
+                Point next = getNextDestination(x[myid],y[myid],j,rdis[myid]);
+                myPoint.add(next);
+            }
+            Point dest = myPoint.poll();
+            pq.add(new Rabbit(dest.x, dest.y, cur.jump+1, cur.pid));
+            score[myid] -= (dest.x + dest.y + 2);
+            totalSum += (dest.x + dest.y + 2);
+            flag[myid] = true;
+            // 배열 업데이트
+            x[myid] = dest.x;
+            y[myid] = dest.y;
+        }
+        // 다 끝난 뒤 우선순위가 가장 높은 토끼를 뽑는다. 
+        // 주의! 이번턴에 한 번이라도 뽑힌 토끼가 뽑혀야 한다.
+        for(int j=0;j<P;++j){
+            if(flag[j]){
+                seleted.add(new Point(x[j], y[j], rpid[j]));
+            }
+        }
+        Point curBest = seleted.poll();
+        score[idMap.get(curBest.pid)] += best; // 최고한테 점수 더해주기
+    }
+    public static void main(String[] args) throws NumberFormatException, IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        Q = Integer.parseInt(br.readLine());
+        for(int q = 0; q<Q;++q){
+            String[] command = br.readLine().split(" ");
+            switch (Integer.parseInt(command[0])) {
+                case 100:
+                    N = Integer.parseInt(command[1]);
+                    M = Integer.parseInt(command[2]);
+                    P = Integer.parseInt(command[3]);
+                    x = new int[P+1];
+                    y = new int[P+1];
+                    score = new long[P+1]; // 초기값 0 
+                    rdis = new long[P+1]; 
+                    rpid = new long[P+1]; 
+                    for(int i=0;i<P;++i){
+                        long pid = Long.parseLong(command[4+i*2]);
+                        long dis = Long.parseLong(command[5+i*2]);
+                        rpid[i] = pid;
+                        idMap.put(pid,i);
+                        rdis[i] = dis;
+                        x[i] = 0; 
+                        y[i] = 0;
+                        pq.add(new Rabbit(0, 0, 0, pid ));
+                    }
+                    break;
+                case 200:
+                    int k = Integer.parseInt(command[1]);
+                    int bestScore = Integer.parseInt(command[2]);
+                    process(k, bestScore);
+                    break;
+                
+                case 300:
+                    long pid = Long.parseLong(command[1]);
+                    int L = Integer.parseInt(command[2]);
+                    int idx = idMap.get(pid);
+                    rdis[idx] = L * rdis[idx]; // L 배 증가시켜 준다.
+                    break;
+                case 400:
+                    long answer = 0; 
+                    for(int i=0;i<P;++i){
+                        answer = Math.max(answer,score[i] + totalSum);
+                    }
+                    System.out.println(answer);
+                    break;
+                default:
+                    
+                    break;
+            }
+        }
+
+    }
+
 }
