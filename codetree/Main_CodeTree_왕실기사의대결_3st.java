@@ -86,6 +86,8 @@ public class Main_CodeTree_왕실기사의대결_3st {
 		// moveable()을 통해서 다음 위치를 찾아준다.
 		if(cur.k<=0) return ;
 		if(movable(idx,dir)) {
+			
+			
 			//이제 왔으면 move를 동작한다 해당 동작을 진행할떄 dmg 배열을 참조해서 진행할 것이다.
 			for(int n = 0 ; n<N;n++) {
 				if(!v[n]) continue;
