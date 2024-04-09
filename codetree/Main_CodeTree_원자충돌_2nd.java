@@ -69,8 +69,8 @@ public class Main_CodeTree_원자충돌_2nd {
 			for (int j = 0; j < n; j++) {
 				for(Atom a : board[i][j]) {
 					int speed = a.s %n;
-					int nx = (i+ n+dx[a.d]*a.s)%n;
-					int ny = (j+ n+dy[a.d]*a.s)%n;
+					int nx = (i+ n+dx[a.d]*speed)%n;
+					int ny = (j+ n+dy[a.d]*speed)%n;
 					
 					temp[nx][ny].add(new Atom(a.m,a.s,a.d));
 				}
